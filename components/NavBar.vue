@@ -29,23 +29,23 @@
         class="text-sm flex sm:flex-grow justify-between"
       >
         <nuxt-link to="/">
-          <a
+          <p
             class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
           >
             HOME
-          </a>
+          </p>
         </nuxt-link>
         <nuxt-link to="/services">
-          <a
+          <p
             class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
           >
-            SERVICES
-          </a>
+            ABOUT
+          </p>
         </nuxt-link>
         <a
           class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
         >
-          PRODUCTS
+          PACKAGES & TREATMENTS
         </a>
         <a
           class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
@@ -60,7 +60,7 @@
         <a
           class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
         >
-          GIFT CARDS
+          LOGIN
         </a>
       </div>
     </div>
