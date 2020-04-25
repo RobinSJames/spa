@@ -1,3 +1,30 @@
+export const apiDataToStateObject = (items) => {
+  const obj = {}
+  Array.isArray(items)
+    ? items.forEach((item, index) => {
+        if (item.id) {
+          obj[item.id] = item
+        } else obj[index] = item
+      })
+    : (obj[items.id] = items)
+  return obj
+}
+export const isObject = (val) => typeof val === 'object'
+
+export const objectExtract = (path, obj, defaultVal = null) => {
+  return path.split('.').reduce((obj, path) => {
+    return obj ? obj[path] : defaultVal
+  }, obj)
+}
+
+export const setStoreItems = (commit, items, resource, key) => {
+  commit('SET_ITEMS', { items, resource, key }, { root: true })
+}
+
+export const setStoreItem = (commit, item, resource) => {
+  commit('SET_ITEM', { item, resource }, { root: true })
+}
+
 export const fetchStoreItemsHelper = (resource, rootConfig) => (
   { dispatch },
   config

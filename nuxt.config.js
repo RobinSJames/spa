@@ -40,7 +40,28 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa',
+    '@nuxtjs/dotenv',
+    ['vue-wait/nuxt', { useVuex: true }]
+  ],
+  /*
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
+  axios: {
+    proxy: true,
+    debug: process.env.API_DEBUG,
+    prefix: '/api/v1'
+  },
+
+  proxy: {
+    '/api': {
+      target: process.env.API_HOST,
+      pathRewrite: { '^/api/v1/': '' }
+    }
+  },
   /*
    ** Build configuration
    */
