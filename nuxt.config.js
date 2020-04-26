@@ -1,3 +1,4 @@
+require('dotenv').config()
 export default {
   mode: 'spa',
   /*
@@ -42,8 +43,9 @@ export default {
    */
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/pwa',
+    '@nuxtjs/auth',
     '@nuxtjs/dotenv',
+    '@nuxtjs/pwa',
     ['vue-wait/nuxt', { useVuex: true }]
   ],
   /*
@@ -57,9 +59,23 @@ export default {
   },
 
   proxy: {
-    '/api': {
-      target: process.env.API_HOST,
-      pathRewrite: { '^/api/v1/': '' }
+    '/api/': {
+      target: process.env.API_HOST
+    }
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/users/login', method: 'post', propertyName: 'token' },
+          logout: { url: '/api/auth/logout', method: 'post' },
+          user: { url: '/users/user', method: 'get', propertyName: 'user' }
+        },
+        // tokenRequired: true,
+        // tokenType: 'bearer'
+        // autoFetchUser: true
+      }
     }
   },
   /*

@@ -35,7 +35,7 @@
             HOME
           </p>
         </nuxt-link>
-        <nuxt-link to="/services">
+        <nuxt-link to="/about">
           <p
             class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
           >
@@ -52,16 +52,29 @@
         >
           SPECIALS
         </a>
-        <a
-          class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer testing"
-        >
-          SHOP
-        </a>
-        <a
-          class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
-        >
-          LOGIN
-        </a>
+        <nuxt-link to="/shop">
+          <p
+            class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer testing"
+          >
+            SHOP
+          </p>
+        </nuxt-link>
+        <div v-if="$auth.loggedIn">
+          <a
+            class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
+          >
+            LOGOUT
+          </a>
+        </div>
+        <div v-else>
+          <nuxt-link to="/login">
+            <a
+              class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
+            >
+              REGISTER/LOGIN
+            </a>
+          </nuxt-link>
+        </div>
       </div>
     </div>
   </nav>

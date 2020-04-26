@@ -1,11 +1,19 @@
-import { createActions } from '~/utils'
-const resource = 'products'
+// const resource = 'products'
 export const state = () => ({
   all: []
 })
 
 export const actions = {
-  ...createActions(resource)
+  fetchItems({ commit }) {
+    this.$axios.$get('/products').then((res) => {
+      // console.log(res)
+      commit('set', res.data)
+    })
+  }
 }
 
-export const mutations = {}
+export const mutations = {
+  set(state, products) {
+    state.all = products
+  }
+}
