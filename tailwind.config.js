@@ -14,6 +14,7 @@ module.exports = {
         'sale-red': '#e53e3e'
       },
       spacing: {
+        tiny: '0.15rem',
         '72': '18rem',
         '80': '20rem',
         '100': '25rem',

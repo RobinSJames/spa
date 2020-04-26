@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div class="h-screen w-screen bg-teally">
+    <nuxt />
+  </div>
 </template>
 
 <script>

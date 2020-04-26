@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full absolute top-0 left-0 h-20 bg-white z-50">
+  <div class="w-full h-full fixed top-0 left-0 h-20 bg-white z-50">
     <div class="w-full h-screen flex flex-col items-stretch">
       <div class="flex justify-between items-center">
         <img src="../assets/images/spa2.jpg" alt="logo" class="w-16" />

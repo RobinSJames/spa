@@ -9,11 +9,13 @@
     <div class="text-center text-white font-bold">
       {{ specials_subheading }}
     </div>
-    <button
-      class="bg-red-800 hover:bg-white text-white font-bold hover:text-red-600 px-2 py-1 mt-2"
-    >
-      SHOP NOW
-    </button>
+    <nuxt-link to="/shop">
+      <button
+        class="bg-red-800 hover:bg-white text-white font-bold hover:text-red-600 px-2 py-1 mt-2"
+      >
+        SHOP NOW
+      </button>
+    </nuxt-link>
   </div>
 </template>
 

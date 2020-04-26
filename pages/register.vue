@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-full flex justify-center items-center">
-    <div>
+    <div class="">
       <label>email</label>
       <input v-model="email" type="text" class="border" />
     </div>
@@ -8,27 +8,14 @@
       <label>password</label>
       <input v-model="password" type="password" class="border" />
     </div>
-    <button @click="loginUser">submit</button>
+    <button @click="registerUser">submit</button>
   </div>
 </template>
 
 <script>
 export default {
   layout: 'authform',
-  data: () => ({
-    email: 'admin@admin.com',
-    password: 'admin123456'
-  }),
-  methods: {
-    loginUser() {
-      this.$auth.loginWith('local', {
-        data: {
-          email: this.email,
-          password: this.password
-        }
-      })
-    }
-  }
+  methods: {}
 }
 </script>
 

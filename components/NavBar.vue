@@ -26,20 +26,13 @@
     >
       <div
         :class="open ? '' : 'w-1/2'"
-        class="text-sm flex sm:flex-grow justify-between"
+        class="text-xs flex sm:flex-grow justify-between"
       >
         <nuxt-link to="/">
           <p
             class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
           >
             HOME
-          </p>
-        </nuxt-link>
-        <nuxt-link to="/about">
-          <p
-            class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
-          >
-            ABOUT
           </p>
         </nuxt-link>
         <a
@@ -71,7 +64,14 @@
             <a
               class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
             >
-              REGISTER/LOGIN
+              LOGIN
+            </a>
+          </nuxt-link>
+          <nuxt-link to="/register">
+            <a
+              class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
+            >
+              REGISTER
             </a>
           </nuxt-link>
         </div>

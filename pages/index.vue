@@ -21,14 +21,42 @@
       </div>
     </div>
     <div
-      class="border-teally border-2 m-10 sm:mt-80 md:mt-80 lg:mt-10 z-50 p-10"
+      class="relative flex flex-col justify-center border-teally border-2 m-10 sm:mt-80 md:mt-80 lg:mt-10 p-10"
     >
+      <h1 class="text-5xl text-center z-10">Heading 1</h1>
+      <h5 class="text-xl text-center">Subheading</h5>
+      <div class="w-full flex justify-center py-4">
+        <div class="w-40 h-tiny bg-teally"></div>
+      </div>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi odit,
+        voluptatibus doloribus magnam doloremque voluptas. Nesciunt, nobis
+        autem. At quo odit placeat voluptatem natus tenetur nihil magni
+        consequuntur pariatur? Autem.
+      </p>
+      <img
+        class="absolute top-0 right-0 w-64 -mt-20"
+        src="/images/branch.png"
+        alt=""
+      />
+    </div>
+    <div class="flex flex-col justify-center border-teally border-2 m-10 p-10">
+      <h1 class="text-5xl text-center">Heading 1</h1>
+      <h5 class="text-xl text-center">Subheading</h5>
+      <div class="w-full flex justify-center py-4">
+        <div class="w-40 h-tiny bg-teally"></div>
+      </div>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi odit,
       voluptatibus doloribus magnam doloremque voluptas. Nesciunt, nobis autem.
       At quo odit placeat voluptatem natus tenetur nihil magni consequuntur
       pariatur? Autem.
     </div>
-    <div class="border-teally border-2 m-10 z-50 p-10">
+    <div class="flex flex-col justify-center border-teally border-2 m-10 p-10">
+      <h1 class="text-5xl text-center">Heading 1</h1>
+      <h5 class="text-xl text-center">Subheading</h5>
+      <div class="w-full flex justify-center py-4">
+        <div class="w-40 h-tiny bg-teally"></div>
+      </div>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi odit,
       voluptatibus doloribus magnam doloremque voluptas. Nesciunt, nobis autem.
       At quo odit placeat voluptatem natus tenetur nihil magni consequuntur
