@@ -2,7 +2,10 @@
   <nav
     class="w-full flex items-center justify-between sm:justify-center flex-wrap px-3 bg-white sm:static border-gray-400 border-t sm:border-b sm:border-t-0"
   >
-    <CartIcon class="w-8" />
+    <div class="relative">
+      <CartIcon class="w-8 h-10" />
+      <CartCounter class="absolute bottom-0 right-0" />
+    </div>
     <nuxt-link to="/">
       <div class="flex items-center flex-no-shrink text-black mr-6">
         <img src="../assets/images/spa2.jpg" alt="logo" class="w-20" />
@@ -96,9 +99,10 @@
 
 <script>
 import CartIcon from '../assets/icons/shopping-cart-outline.svg'
+import CartCounter from '~/components/CartCounter'
 export default {
   name: 'NavBar',
-  components: { CartIcon },
+  components: { CartIcon, CartCounter },
   props: {
     open: {
       type: Boolean,
