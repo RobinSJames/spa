@@ -14,43 +14,43 @@
         class="flex flex-1 relative items-center border border-b pl-8 text-black font-semibold hover:text-gray-900 cursor-pointer"
       >
         <div class="absolute left-0 w-1/6 h-3 mt-3 mx-8 bg-teally"></div>
-        <div class="absolute bottom-0 w-full h-1 mb-6 mx-10 bg-black"></div>
-        <span class="z-10">HOME</span>
+        <div class="absolute bottom-0 w-1/2 h-1 mb-6 mx-10 bg-black"></div>
+        <span class="z-10">BLOG</span>
       </div>
       <div
         class="flex flex-1 relative items-center border border-b pl-8 text-black font-semibold hover:text-gray-900 cursor-pointer"
       >
         <div class="absolute left-0 w-1/6 h-3 mt-3 mx-8 bg-teally"></div>
-        <div class="absolute bottom-0 w-full h-1 mb-6 mx-10 bg-black"></div>
-        <span class="z-10">SERVICES</span>
+        <div class="absolute bottom-0 w-1/2 h-1 mb-6 mx-10 bg-black"></div>
+        <span class="z-10">PACKAGES</span>
       </div>
       <div
         class="flex flex-1 relative items-center border border-b pl-8 text-black font-semibold hover:text-gray-900 cursor-pointer"
       >
         <div class="absolute left-0 w-1/6 h-3 mt-3 mx-8 bg-teally"></div>
-        <div class="absolute bottom-0 w-full h-1 mb-6 mx-10 bg-black"></div>
-        <span class="z-10">PRODUCTS</span>
+        <div class="absolute bottom-0 w-1/2 h-1 mb-6 mx-10 bg-black"></div>
+        <span class="z-10">TREATMENTS</span>
       </div>
       <div
         class="flex flex-1 relative items-center border border-b pl-8 text-black font-semibold hover:text-gray-900 cursor-pointer"
       >
         <div class="absolute left-0 w-1/6 h-3 mt-3 mx-8 bg-teally"></div>
-        <div class="absolute bottom-0 w-full h-1 mb-6 mx-10 bg-black"></div>
+        <div class="absolute bottom-0 w-1/2 h-1 mb-6 mx-10 bg-black"></div>
         <span class="z-10">SPECIALS</span>
       </div>
-      <!-- <div
-        class="flex flex-1 relative items-center border border-b pl-8 text-black font-semibold hover:text-gray-900 cursor-pointer"
-      >
-        <div class="absolute left-0 w-1/6 h-3 mt-3 mx-8 bg-teally"></div>
-        <div class="absolute bottom-0 w-full h-1 mb-6 mx-10 bg-black"></div>
-        <span class="z-10">SHOP</span>
-      </div> -->
       <div
         class="flex flex-1 relative items-center border border-b pl-8 text-black font-semibold hover:text-gray-900 cursor-pointer"
       >
         <div class="absolute left-0 w-1/6 h-3 mt-3 mx-8 bg-teally"></div>
-        <div class="absolute bottom-0 w-full h-1 mb-6 mx-10 bg-black"></div>
-        <span class="z-10">GIFT CARDS</span>
+        <div class="absolute bottom-0 w-1/2 h-1 mb-6 mx-10 bg-black"></div>
+        <span class="z-10">SHOP</span>
+      </div>
+      <div
+        class="flex flex-1 relative items-center border border-b pl-8 text-black font-semibold hover:text-gray-900 cursor-pointer"
+      >
+        <div class="absolute left-0 w-1/6 h-3 mt-3 mx-8 bg-teally"></div>
+        <div class="absolute bottom-0 w-1/2 h-1 mb-6 mx-10 bg-black"></div>
+        <span class="z-10">LOGIN</span>
       </div>
     </div>
   </div>

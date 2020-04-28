@@ -2,10 +2,12 @@
   <nav
     class="w-full flex items-center justify-between sm:justify-center flex-wrap px-3 bg-white sm:static border-gray-400 border-t sm:border-b sm:border-t-0"
   >
-    <div class="flex items-center flex-no-shrink text-black mr-6">
-      <img src="../assets/images/spa2.jpg" alt="logo" class="w-20" />
-    </div>
-    <div class="block sm:hidden">
+    <nuxt-link to="/">
+      <div class="flex items-center flex-no-shrink text-black mr-6">
+        <img src="../assets/images/spa2.jpg" alt="logo" class="w-20" />
+      </div>
+    </nuxt-link>
+    <div class="block md:hidden">
       <button
         @click="toggle"
         class="flex items-center px-2 py-2 border rounded-full hover:text-green-600 hover:border-green-600"
@@ -28,28 +30,46 @@
         :class="open ? '' : 'w-1/2'"
         class="text-xs flex sm:flex-grow justify-between"
       >
-        <nuxt-link to="/">
+        <nuxt-link to="/blog">
           <p
             class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
           >
-            HOME
+            BLOG
           </p>
         </nuxt-link>
-        <a
-          class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
-        >
-          PACKAGES & TREATMENTS
-        </a>
-        <a
-          class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
-        >
-          SPECIALS
-        </a>
+        <nuxt-link to="packages">
+          <a
+            class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
+          >
+            PACKAGES
+          </a>
+        </nuxt-link>
+        <nuxt-link to="treatments">
+          <a
+            class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
+          >
+            TREATMENTS
+          </a>
+        </nuxt-link>
+        <nuxt-link to="/specials">
+          <a
+            class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
+          >
+            SPECIALS
+          </a>
+        </nuxt-link>
         <nuxt-link to="/shop">
           <p
             class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer testing"
           >
             SHOP
+          </p>
+        </nuxt-link>
+        <nuxt-link to="/cart">
+          <p
+            class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer testing"
+          >
+            CART
           </p>
         </nuxt-link>
         <div v-if="$auth.loggedIn">
@@ -65,13 +85,6 @@
               class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
             >
               LOGIN
-            </a>
-          </nuxt-link>
-          <nuxt-link to="/register">
-            <a
-              class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
-            >
-              REGISTER
             </a>
           </nuxt-link>
         </div>
