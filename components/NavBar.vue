@@ -2,7 +2,7 @@
   <nav
     class="w-full flex items-center justify-between sm:justify-center flex-wrap px-3 bg-white sm:static border-gray-400 border-t sm:border-b sm:border-t-0"
   >
-    <div class="relative">
+    <div class="relative md:hidden">
       <CartIcon class="w-8 h-10" />
       <CartCounter class="absolute bottom-0 right-0" />
     </div>
@@ -34,64 +34,61 @@
         :class="open ? '' : 'w-1/2'"
         class="text-xs flex sm:flex-grow justify-between"
       >
-        <nuxt-link to="/blog">
+        <nuxt-link to="/blog" class="flex items-center">
           <p
             class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
           >
             BLOG
           </p>
         </nuxt-link>
-        <nuxt-link to="packages">
+        <nuxt-link to="packages" class="flex items-center">
           <a
             class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
           >
             PACKAGES
           </a>
         </nuxt-link>
-        <nuxt-link to="treatments">
+        <nuxt-link to="treatments" class="flex items-center">
           <a
             class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
           >
             TREATMENTS
           </a>
         </nuxt-link>
-        <nuxt-link to="/specials">
+        <nuxt-link to="/specials" class="flex items-center">
           <a
             class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
           >
             SPECIALS
           </a>
         </nuxt-link>
-        <nuxt-link to="/shop">
+        <nuxt-link to="/shop" class="flex items-center">
           <p
             class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer testing"
           >
             SHOP
           </p>
         </nuxt-link>
-        <nuxt-link to="/cart">
-          <p
-            class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer testing"
-          >
-            CART
-          </p>
-        </nuxt-link>
-        <div v-if="$auth.loggedIn">
+        <nuxt-link v-if="$auth.loggedIn">
           <a
             class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
           >
             LOGOUT
           </a>
-        </div>
-        <div v-else>
-          <nuxt-link to="/login">
-            <a
-              class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
-            >
-              LOGIN
-            </a>
-          </nuxt-link>
-        </div>
+        </nuxt-link>
+        <nuxt-link v-else to="/login" class="flex items-center">
+          <p
+            class="no-underline block mt-4 sm:inline-block sm:mt-0 hover:text-green-600 mr-4 sm:mr-4 md:mr-6 lg:mr-8 cursor-pointer"
+          >
+            LOGIN
+          </p>
+        </nuxt-link>
+        <nuxt-link to="/cart" class="flex items-center">
+          <div class="relative">
+            <CartIcon class="w-8 h-10" />
+            <CartCounter :counter="15" class="absolute bottom-0 right-0" />
+          </div>
+        </nuxt-link>
       </div>
     </div>
   </nav>
