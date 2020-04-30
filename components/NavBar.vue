@@ -1,11 +1,13 @@
 <template>
   <nav
-    class="w-full flex items-center justify-between sm:justify-center flex-wrap px-3 bg-white sm:static border-gray-400 border-t sm:border-b sm:border-t-0"
+    class="w-full flex items-center justify-around md:justify-center flex-wrap px-3 bg-white sm:static border-gray-400 border-t border-b sm:border-t-0"
   >
-    <div class="relative md:hidden">
-      <CartIcon class="w-8 h-10" />
-      <CartCounter class="absolute bottom-0 right-0" />
-    </div>
+    <nuxt-link to="/cart">
+      <div class="relative md:hidden">
+        <CartIcon class="w-8 h-10" />
+        <CartCounter class="absolute bottom-0 right-0" />
+      </div>
+    </nuxt-link>
     <nuxt-link to="/">
       <div class="flex items-center flex-no-shrink text-black mr-6">
         <img src="../assets/images/spa2.jpg" alt="logo" class="w-20" />
@@ -28,7 +30,7 @@
     </div>
     <div
       :class="open ? 'hidden' : 'hidden'"
-      class="w-full sm:flex sm:items-center sm:w-auto"
+      class="w-full md:flex md:items-center md:w-auto"
     >
       <div
         :class="open ? '' : 'w-1/2'"
