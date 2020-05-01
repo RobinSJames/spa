@@ -1,5 +1,7 @@
 <template>
-  <div>Spa</div>
+  <div>
+    Treatments
+  </div>
 </template>
 
 <script>
