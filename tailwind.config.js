@@ -11,7 +11,8 @@ module.exports = {
         teally: '#48BCA0',
         dominant: '#197948',
         mrgray: '#e8e8e8',
-        'sale-red': '#e53e3e'
+        'sale-red': '#e53e3e',
+        'moss-green': '#007240'
       },
       spacing: {
         'x-tiny': '0.1rem',

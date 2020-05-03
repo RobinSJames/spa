@@ -1,9 +1,42 @@
 <template>
-  <div></div>
+  <div class="flex">
+    <div class="w-1/2">
+      <div>
+        <img :src="'http://localhost:5000/' + product.productImage" alt="" />
+      </div>
+      <div>
+        <img src="" alt="" />
+      </div>
+      <div>
+        <img src="" alt="" />
+      </div>
+    </div>
+    <div class="w-1/2">
+      <h1 class="text-5xl capitalize">{{ product.title }}</h1>
+      <p v-if="product.availability">{{ product.availability }}</p>
+      <p>{{ product.description }}</p>
+      <p>{{ product.description }}</p>
+      <p>{{ product.description }}</p>
+      <InputField type="select" />
+      <InputField type="number" />
+      {{ product }}
+    </div>
+  </div>
 </template>
 
 <script>
-export default {}
+import InputField from '~/components/InputFields'
+export default {
+  components: { InputField },
+  computed: {
+    product() {
+      return this.$store.state.products.single
+    }
+  },
+  async fetch({ store, params }) {
+    await store.dispatch('products/fetchItem', { id: params.id })
+  }
+}
 </script>
 
 <style></style>

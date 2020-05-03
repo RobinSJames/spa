@@ -12,6 +12,14 @@
       <label>{{ label }}</label>
       <input type="textarea" class="" />
     </div>
+    <div v-if="type === 'number'">
+      <label>{{ label }}</label>
+      <input type="number" class="" />
+    </div>
+    <div v-if="type === 'select'">
+      <label>{{ label }}</label>
+      <input type="select" class="" />
+    </div>
   </div>
 </template>
 

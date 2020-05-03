@@ -2,11 +2,19 @@
   <div class="pt-10">
     <div class="px-4">
       <p class="text-sm font-bold text-teally uppercase mb-4">Categories</p>
-      <div class="grid grid-cols-2 grid-rows-2 gap-4 h-64">
-        <div class="col-span-1 grid-span-1 w-full h-full bg-black"></div>
-        <div class="col-span-1 grid-span-1 w-full h-full bg-black"></div>
-        <div class="col-span-1 grid-span-1 w-full h-full bg-black"></div>
-        <div class="col-span-1 grid-span-1 w-full h-full bg-black"></div>
+      <div class="grid grid-cols-2 grid-rows-2 gap-4">
+        <div class="col-span-1 grid-span-1 w-full h-full bg-black">
+          <img src="/images/branch.png" alt="" />
+        </div>
+        <div class="col-span-1 grid-span-1 w-full h-full bg-black">
+          <img src="/images/branch.png" alt="" />
+        </div>
+        <div class="col-span-1 grid-span-1 w-full h-full bg-black">
+          <img src="/images/branch.png" alt="" />
+        </div>
+        <div class="col-span-1 grid-span-1 w-full h-full bg-black">
+          <img src="/images/branch.png" alt="" />
+        </div>
       </div>
       <div class="h-x-tiny bg-black my-8"></div>
       <p class="text-sm font-bold text-teally uppercase my-4">All products</p>
@@ -15,7 +23,7 @@
       <ProductItem
         v-for="product in products"
         :key="product._id"
-        :img-src="'../../assets/images/image.jpg'"
+        :img-src="'http://localhost:5000/' + product.productImage"
         :sale-price="5"
         @view-action="setViewRoute(product._id)"
       />
@@ -28,6 +36,9 @@ import ProductList from '~/components/ProductList'
 import ProductItem from '~/components/ProductItem'
 export default {
   components: { ProductList, ProductItem },
+  data: () => ({
+    api: process.env.API_HOST
+  }),
   computed: {
     products() {
       return this.$store.state.products.all

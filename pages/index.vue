@@ -51,21 +51,16 @@
       At quo odit placeat voluptatem natus tenetur nihil magni consequuntur
       pariatur? Autem.
     </div>
-    <div class="flex flex-col justify-center border-teally border-2 m-10 p-10">
-      <h1 class="text-5xl text-center">Heading 1</h1>
-      <h5 class="text-xl text-center">Subheading</h5>
-      <div class="w-full flex justify-center py-4">
-        <div class="w-40 h-tiny bg-teally"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-4 gap-4 p-10">
+      <div class="bg-black md:row-span-4">
+        <img src="/images/branch.png" alt="" />
       </div>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi odit,
-      voluptatibus doloribus magnam doloremque voluptas. Nesciunt, nobis autem.
-      At quo odit placeat voluptatem natus tenetur nihil magni consequuntur
-      pariatur? Autem.
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-4">
-      <div class="bg-black md:row-span-4">This me</div>
-      <div class="bg-teally md:row-span-2">This me</div>
-      <div class="bg-dominat md:row-span-2">This me</div>
+      <div class="bg-teally md:row-span-2">
+        <img src="/images/branch.png" alt="" />
+      </div>
+      <div class="bg-dominat md:row-span-2">
+        <img src="/images/branch.png" alt="" />
+      </div>
     </div>
     <div>
       <div>
