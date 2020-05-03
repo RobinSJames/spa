@@ -1,6 +1,6 @@
 <template>
   <div class="flex">
-    <div class="w-1/2">
+    <div class="w-1/2 pl-4">
       <div>
         <img :src="'http://localhost:5000/' + product.productImage" alt="" />
       </div>
@@ -36,6 +36,9 @@ export default {
   computed: {
     product() {
       return this.$store.state.products.single
+    },
+    priceByQuantity() {
+      return this.product.cost
     }
   }
 }

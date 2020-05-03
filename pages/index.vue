@@ -67,12 +67,44 @@
         <img src="" alt="This is an image" />
       </div>
     </div>
+    <CustomerFavourites :orders="orders" />
   </div>
 </template>
 
 <script>
+import CustomerFavourites from '~/components/CustomerFavourites'
 export default {
-  components: {}
+  components: { CustomerFavourites },
+  data: () => ({
+    orders: [
+      {
+        _id: 1,
+        title: 'This is title 1',
+        productImage: '/images/branch.png',
+        cost: 77
+      },
+      {
+        _id: 1,
+        title: 'This is title 1',
+        productImage: '/images/branch.png',
+        cost: 77
+      },
+      {
+        _id: 1,
+        title: 'This is title 1',
+        productImage: '/images/branch.png',
+        cost: 77
+      }
+    ]
+  })
+  // async fetch({ store }) {
+  //   await store.dispatch('orders/fetchItems')
+  // },
+  // computed: {
+  //   orders() {
+  //     return this.$store.state.products.all
+  //   }
+  // }
 }
 </script>
 

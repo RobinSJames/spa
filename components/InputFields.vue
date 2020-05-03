@@ -1,23 +1,7 @@
 <template>
   <div>
-    <div v-if="type === 'text'">
-      <label>{{ label }}</label>
-      <input type="text" class="w-full border p-2" />
-    </div>
-    <div v-if="type === 'password'">
-      <label>{{ label }}</label>
-      <input type="password" class="w-full border p-2" />
-    </div>
-    <div v-if="type === 'text-area'">
-      <label>{{ label }}</label>
-      <input type="textarea" class="w-full border p-2" />
-    </div>
-    <div v-if="type === 'number'">
-      <label>{{ label }}</label>
-      <input type="number" :min="min" class="w-full border p-2" />
-    </div>
     <div v-if="type === 'select'">
-      <label>{{ label }}</label>
+      <label class="tracking-widest">{{ label }}</label>
       <select type="select" class="w-full border p-2">
         <option
           v-for="(option, index) in options"
@@ -26,6 +10,10 @@
           >{{ option }}</option
         >
       </select>
+    </div>
+    <div v-else>
+      <label class="tracking-widest">{{ label }}</label>
+      <input :type="type" class="w-full border p-2" />
     </div>
   </div>
 </template>
@@ -46,6 +34,10 @@ export default {
       default: () => ['This is an option']
     },
     min: {
+      type: Number,
+      default: 0
+    },
+    max: {
       type: Number,
       default: 0
     }
