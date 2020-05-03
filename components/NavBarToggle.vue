@@ -4,8 +4,8 @@
       <div class="flex justify-between items-center">
         <img src="../assets/images/spa2.jpg" alt="logo" class="w-16" />
         <p
-          @click="toggle"
           class="w-12 h-full text-5xl hover:text-green-600 cursor-pointer"
+          @click="toggle"
         >
           &times;
         </p>

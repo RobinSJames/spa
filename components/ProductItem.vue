@@ -15,14 +15,14 @@
     </p>
     <div class="flex flex-col md:flex-row justify-between">
       <button
-        @click="$emit('view-action')"
         class="w-full bg-teally uppercase text-white text-xs font-bold py-2 mb-2 md:mr-2 md:mb-0"
+        @click="$emit('view-action')"
       >
         view product
       </button>
       <button
-        @click="$emit('cart-action')"
         class="w-full bg-teally uppercase text-white text-xs font-bold py-2"
+        @click="$emit('cart-action')"
       >
         add to cart
       </button>

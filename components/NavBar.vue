@@ -15,8 +15,8 @@
     </nuxt-link>
     <div class="block md:hidden">
       <button
-        @click="toggle"
         class="flex items-center px-2 py-2 border rounded-full hover:text-green-600 hover:border-green-600"
+        @click="toggle"
       >
         <svg
           class="fill-current h-6 w-6"

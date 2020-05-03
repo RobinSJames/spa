@@ -1,8 +1,8 @@
 <template>
   <div>
     <specials />
-    <nav-bar :open="open" @isOpen="toggleNav" class="z-40" />
-    <nav-bar-toggle v-if="open" @notOpen="toggleNav" class="md:hidden" />
+    <nav-bar :open="open" class="z-40" @isOpen="toggleNav" />
+    <nav-bar-toggle v-if="open" class="md:hidden" @notOpen="toggleNav" />
     <div v-if="loading" class="logo-container">
       <logo class="w-40 h-40" />
     </div>

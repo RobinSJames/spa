@@ -36,6 +36,9 @@ import ProductList from '~/components/ProductList'
 import ProductItem from '~/components/ProductItem'
 export default {
   components: { ProductList, ProductItem },
+  async fetch({ store }) {
+    await store.dispatch('products/fetchItems')
+  },
   data: () => ({
     api: process.env.API_HOST
   }),
@@ -43,9 +46,6 @@ export default {
     products() {
       return this.$store.state.products.all
     }
-  },
-  async fetch({ store }) {
-    await store.dispatch('products/fetchItems')
   },
   mounted() {
     // this.getProducts()
