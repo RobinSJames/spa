@@ -1,27 +1,41 @@
 <template>
   <div class="flex flex-col w-full h-full">
-    <div class="relative w-full h-100 lg:h-screen pt-20">
+    <div class="relative w-full h-120 lg:h-screen">
       <img
-        src="../assets/images/image.jpg"
-        class="w-full h-100 sm:h-120 md:h-160 absolute object-cover object-top md:object-center  top-0 left-0 z-0"
+        src="/images/spaimage.jpeg"
+        class="w-full h-full absolute object-cover object-top md:object-center top-0 left-0 z-0"
       />
-      <div class="w-full absolute bottom-0 mb-2 pb-24 sm:pb-0 lg:pb-64">
-        <div class="w-full h-full flex justify-around text-xs sm:text-lg">
-          <button
-            class="w-2/5 sm:w-1/3 md:w-2/6 lg:w-1/6 flex justify-center items-center border-2 border-dominant text-dominant font-bold bg-mrgray hover:bg-teally hover:border-teally hover:text-white hover:font-bold px-3 py-2 sm:px-4 rounded"
-          >
-            <span class="opacity-100">MAKE BOOKING</span>
-          </button>
-          <button
-            class="w-2/5 sm:w-1/3 md:w-2/6 lg:w-1/6 flex justify-center items-center border-2 border-dominant text-dominant font-bold bg-mrgray hover:bg-teally hover:border-teally hover:text-white hover:font-bold px-3 py-2 sm:px-4 rounded"
-          >
-            VISIT STORE
-          </button>
+      <div class="w-full h-full bg-black opacity-50"></div>
+      <div class="w-full absolute top-0 mt-10">
+        <h3
+          class="text-xl text-white p-1/12 font-bold tracking-widest leading-loose"
+        >
+          Rechange your senses.<br />
+          <span>All you need is the right</span>
+          <span class="text-teally uppercase">ambiance</span>
+        </h3>
+      </div>
+      <div class="w-full absolute bottom-0 mb-2 pb-10 sm:pb-20 lg:pb-64">
+        <div
+          class="w-full h-full flex flex-col sm:flex-row items-center sm:justify-around text-xs sm:text-lg"
+        >
+          <AppButton
+            to="/shop"
+            label="MAKE BOOKING"
+            variant="teally"
+            class="w-1/2 sm:w-1/4 mb-8 sm:mb-0"
+          />
+          <AppButton
+            to="/shop"
+            label="VISIT STORE"
+            variant="teally"
+            class="w-1/2 sm:w-1/4"
+          />
         </div>
       </div>
     </div>
     <div
-      class="relative flex flex-col justify-center border-teally border-2 m-10 sm:mt-80 md:mt-80 lg:mt-10 p-10"
+      class="relative flex flex-col justify-center border-teally border-2 m-1/12 mt-20 sm:mt-24 md:mt-64 lg:mt-20 p-1/12"
     >
       <h1 class="text-5xl text-center z-10">Heading 1</h1>
       <h5 class="text-xl text-center">Subheading</h5>
@@ -37,10 +51,47 @@
       <img
         class="absolute top-0 right-0 w-64 -mt-20"
         src="/images/branch.png"
-        alt=""
+        alt
       />
     </div>
-    <div class="flex flex-col justify-center border-teally border-2 m-10 p-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-4 gap-4 px-1/12">
+      <div class="relative bg-black row-span-2 md:row-span-4">
+        <img
+          src="/images/eye-plant.jpg"
+          alt
+          class="absolute object-cover h-full w-full"
+        />
+        <div class="absolute bottom-0 w-full text-white px-2">
+          <p class="tracking-widest">SHOP</p>
+          <h3 class="text-3xl font-bold">Find what you're looking for</h3>
+        </div>
+      </div>
+      <div class="relative bg-teally md:row-span-2">
+        <img
+          src="/images/fruit.jpg"
+          alt
+          class="absolute object-cover h-full w-full"
+        />
+        <div class="absolute bottom-0 w-full text-white px-2">
+          <p class="tracking-widest">SHOP</p>
+          <h3 class="text-3xl font-bold">Find what you're looking for</h3>
+        </div>
+      </div>
+      <div class="relative bg-dominat md:row-span-2 h-64">
+        <img
+          src="/images/woman-yoga.jpg"
+          alt
+          class="absolute object-cover object-top h-full w-full"
+        />
+        <div class="absolute bottom-0 w-full text-white px-2">
+          <p class="tracking-widest">SHOP</p>
+          <h3 class="text-3xl font-bold">Find what you're looking for</h3>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-col justify-center border-teally border-2 m-1/12 p-1/12"
+    >
       <h1 class="text-5xl text-center">Heading 1</h1>
       <h5 class="text-xl text-center">Subheading</h5>
       <div class="w-full flex justify-center py-4">
@@ -51,60 +102,69 @@
       At quo odit placeat voluptatem natus tenetur nihil magni consequuntur
       pariatur? Autem.
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-4 gap-4 p-10">
-      <div class="bg-black md:row-span-4">
-        <img src="/images/branch.png" alt="" />
-      </div>
-      <div class="bg-teally md:row-span-2">
-        <img src="/images/branch.png" alt="" />
-      </div>
-      <div class="bg-dominat md:row-span-2">
-        <img src="/images/branch.png" alt="" />
-      </div>
-    </div>
     <div>
-      <div>
-        <img src="" alt="This is an image" />
+      <div class="relative my-10 text-white h-screen">
+        <img
+          src="/images/nutrition.jpg"
+          alt="This is an image"
+          class="object-cover object-top h-full w-full"
+        />
+        <div class="absolute inset-y-0 w-full h-full py-10 px-1/12">
+          <h4 class="text-4xl">This is the title</h4>
+          <div class="w-40 h-tiny bg-teally mb-10"></div>
+          <p class="leading-loose mb-8">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse quo
+            cum aliquam. Provident, impedit minima. Soluta et molestiae
+            corporis! Quasi aliquid ipsa ab tempore, expedita qui eum minima
+            facere quo.
+          </p>
+          <AppButton
+            to="/shop"
+            label="VISIT STORE"
+            variant="teally"
+            class="w-1/2 md:w-1/4"
+          />
+        </div>
       </div>
     </div>
-    <CustomerFavourites :orders="orders" />
+    <!-- {{ products }} -->
+    <CustomerFavourites :orders="favourites" :products="products" />
   </div>
 </template>
 
 <script>
 import CustomerFavourites from '~/components/CustomerFavourites'
+import AppButton from '~/components/AppButton'
 export default {
-  components: { CustomerFavourites },
-  data: () => ({
-    orders: [
-      {
-        _id: 1,
-        title: 'This is title 1',
-        productImage: '/images/branch.png',
-        cost: 77
-      },
-      {
-        _id: 1,
-        title: 'This is title 1',
-        productImage: '/images/branch.png',
-        cost: 77
-      },
-      {
-        _id: 1,
-        title: 'This is title 1',
-        productImage: '/images/branch.png',
-        cost: 77
+  components: { CustomerFavourites, AppButton },
+  async fetch({ store }) {
+    await store.dispatch('orders/fetchFavourites')
+    await store.dispatch('products/fetchItems')
+  },
+  data: () => ({}),
+  computed: {
+    // user() {
+    //   return this.$store.user.state.all
+    // },
+    favourites() {
+      return this.$store.state.orders.favourites
+    },
+    products() {
+      return this.$store.state.products.all
+    }
+  },
+  mounted() {
+    this.getUser()
+  },
+  methods: {
+    getUser() {
+      if (this.$auth) {
+        console.log(this.$auth)
+      } else {
+        console.log('Not logged in')
       }
-    ]
-  })
-  // async fetch({ store }) {
-  //   await store.dispatch('orders/fetchItems')
-  // },
-  // computed: {
-  //   orders() {
-  //     return this.$store.state.products.all
-  //   }
-  // }
+    }
+  }
 }
 </script>
 

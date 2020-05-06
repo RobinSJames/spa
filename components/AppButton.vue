@@ -5,7 +5,7 @@
       v-if="!loading"
       :to="to"
       :class="setVariant"
-      class="appButton btn px-5 text-xs font-medium flex flex-wrap items-center cursor-pointer select-none"
+      class="appButton btn px-5 text-sm font-bold flex justify-center items-center cursor-pointer select-none"
       @click="disabled ? false : $emit('clicked')"
     >
       <!-- <div v-if="icon" class="appButton__icon mr-2 fill-current w-4">

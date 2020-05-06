@@ -13,7 +13,13 @@
     </div>
     <div v-else>
       <label class="tracking-widest">{{ label }}</label>
-      <input :type="type" class="w-full border p-2" />
+      <input
+        v-model="inputValue"
+        :type="type"
+        class="w-full border p-2"
+        :min="min"
+        :max="max"
+      />
     </div>
   </div>
 </template>
@@ -21,6 +27,10 @@
 <script>
 export default {
   props: {
+    value: {
+      type: [Number, String, Object, Array, Date],
+      default: ''
+    },
     label: {
       type: String,
       default: 'Label'
@@ -40,6 +50,16 @@ export default {
     max: {
       type: Number,
       default: 0
+    }
+  },
+  computed: {
+    inputValue: {
+      get() {
+        return this.value
+      },
+      set(value) {
+        this.$emit('input', value)
+      }
     }
   }
 }
