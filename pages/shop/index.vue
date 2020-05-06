@@ -4,7 +4,7 @@
       <p class="text-sm font-bold text-teally uppercase mb-4">Categories</p>
       <div class="grid grid-cols-2 grid-rows-2 gap-4">
         <div
-          class="relative col-span-1 grid-span-1 w-full h-32 sm:h-40 bg-black cursor-pointer"
+          class="relative col-span-1 grid-span-1 w-full h-32 sm:h-40 md:h-56 lg:h-64 bg-black cursor-pointer"
         >
           <img
             src="/images/categories/category4.png"
@@ -76,8 +76,9 @@
         :cost="product.cost"
         :is-on-sale="product.isOnSale"
         :sale-price="product.salePrice"
-        class="pr-2"
+        class="pr-2 md:pr-4 lg:pr-8 md:mb-8 lg:mb-10"
         @view-action="setViewRoute(product._id)"
+        @cart-action="addToCart(product._id, (quantity = 1))"
       />
     </ProductList>
   </div>
@@ -92,28 +93,35 @@ export default {
     await store.dispatch('products/fetchItems')
   },
   data: () => ({
-    api: process.env.API_HOST
+    api: process.env.API_HOST,
+    orders: []
   }),
   computed: {
     products() {
       return this.$store.state.products.all
     }
   },
-  mounted() {
-    // this.getProducts()
-  },
   methods: {
-    // async getProducts() {
-    //   await this.$axios
-    //     .$get('http://localhost:5000/api/v1/products')
-    //     .then((res) => {
-    //       return {
-    //         data: res
-    //       }
-    //     })
-    // }
     setViewRoute(x) {
       this.$router.push(`/shop/${x}`)
+    },
+    setLocalStorage(x, y) {
+      const localCart = localStorage.getItem('cart')
+      const parseCart = JSON.parse(localCart)
+      const obj = {
+        product: x,
+        quantity: y
+      }
+      if (parseCart.length > 0) {
+        parseCart.push(obj)
+        localStorage.setItem('cart', JSON.stringify(parseCart))
+      } else {
+        this.orders.push(obj)
+        localStorage.setItem('cart', JSON.stringify(this.orders))
+      }
+    },
+    addToCart(x, y) {
+      this.setLocalStorage(x, y)
     }
   }
 }

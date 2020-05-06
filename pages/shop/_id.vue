@@ -31,7 +31,12 @@
         :max="10"
         class="pb-4"
       />
-      <AppButton label="Add to cart" variant="teally" />
+      <AppButton
+        label="Add to cart"
+        variant="teally"
+        :disabled="quantity > 9 || quantity < 1 ? true : false"
+        @clicked="addToCart(product._id, quantity)"
+      />
     </div>
   </div>
 </template>
@@ -45,7 +50,8 @@ export default {
     await store.dispatch('products/fetchItem', { id: params.id })
   },
   data: () => ({
-    quantity: 1
+    quantity: 1,
+    orders: []
   }),
   computed: {
     product() {
@@ -53,6 +59,19 @@ export default {
     },
     priceByQuantity() {
       return this.product.cost * this.quantity
+    }
+  },
+  methods: {
+    setLocalStorage(x, y) {
+      const obj = {
+        product: x,
+        quantity: y
+      }
+      this.orders.push(obj)
+      localStorage.setItem('cart', JSON.stringify(this.orders))
+    },
+    addToCart(x, y) {
+      this.setLocalStorage(x, y)
     }
   }
 }

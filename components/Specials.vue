@@ -24,9 +24,9 @@ export default {
   name: 'Specials',
   data: () => ({
     specials: true,
-    specials_heading: 'Join us for our Xmas Sale',
+    specials_heading: 'Join us for our Winter Sale',
     specials_subheading:
-      'Get 10% off all gift card purchases this season with us this Xmas'
+      'Get 10% off all gift card purchases this winter season'
   })
 }
 </script>
