@@ -10,8 +10,8 @@
         <h3
           class="text-xl md:text-3xl xl:text-4xl text-white p-1/12 font-bold leading-loose"
         >
-          Rechange your senses.<br />
-          <span class="tracking-widest">All you need is the right</span>
+          Recharge your senses.<br />
+          <span class="tracking-widest">With the right</span>
           <span class="text-teally uppercase tracking-widest">ambiance</span>.
         </h3>
       </div>
@@ -20,7 +20,7 @@
           class="w-full h-full flex flex-col sm:flex-row items-center sm:justify-around text-xs sm:text-lg px-1/12 sm:px-0"
         >
           <AppButton
-            to="/shop"
+            to="/packages"
             label="MAKE BOOKING"
             variant="teally"
             class="w-full sm:w-1/4 lg:w-56 mb-8 sm:mb-0"
@@ -54,8 +54,13 @@
         alt
       />
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-4 gap-4 px-1/12">
-      <div class="relative bg-black row-span-2 md:row-span-4">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 grid-rows-4 gap-4 px-1/12 cursor-pointer"
+    >
+      <div
+        class="relative bg-black row-span-2 md:row-span-4"
+        @click="$router.push('/shop')"
+      >
         <img
           src="/images/eye-plant.jpg"
           alt
@@ -66,26 +71,34 @@
           <h3 class="text-3xl font-bold">Find what you're looking for</h3>
         </div>
       </div>
-      <div class="relative bg-teally md:row-span-2">
+      <div
+        class="relative bg-teally md:row-span-2"
+        @click="$router.push('/blog')"
+      >
         <img
           src="/images/fruit.jpg"
           alt
-          class="absolute object-cover h-full w-full"
+          class="absolute object-cover h-full w-full cursor-pointer"
         />
         <div class="absolute bottom-0 w-full text-white px-2">
-          <p class="tracking-widest">SHOP</p>
-          <h3 class="text-3xl font-bold">Find what you're looking for</h3>
+          <p class="tracking-widest">BLOG</p>
+          <h3 class="text-3xl font-bold">
+            Trade secrets, exposed for the greater good
+          </h3>
         </div>
       </div>
-      <div class="relative bg-dominat md:row-span-2 h-64">
+      <div
+        class="relative bg-dominat md:row-span-2 h-64"
+        @click="$router.push('/treatments')"
+      >
         <img
           src="/images/woman-yoga.jpg"
           alt
           class="absolute object-cover object-top h-full w-full"
         />
         <div class="absolute bottom-0 w-full text-white px-2">
-          <p class="tracking-widest">SHOP</p>
-          <h3 class="text-3xl font-bold">Find what you're looking for</h3>
+          <p class="tracking-widest">TREATMENTS</p>
+          <h3 class="text-3xl font-bold">Let us help you embrace peace</h3>
         </div>
       </div>
     </div>
@@ -109,10 +122,12 @@
           alt="This is an image"
           class="object-cover object-top h-full w-full"
         />
-        <div class="absolute inset-y-0 w-full h-full py-10 px-1/12">
-          <h4 class="text-4xl">This is the title</h4>
+        <div
+          class="absolute inset-y-0 w-full h-full py-10 md:py-20 px-1/12 pr-4/12"
+        >
+          <h4 class="text-4xl md:mb-10">This is the title</h4>
           <div class="w-40 h-tiny bg-teally mb-10"></div>
-          <p class="leading-loose mb-8">
+          <p class="leading-loose mb-8 md:mb-20">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse quo
             cum aliquam. Provident, impedit minima. Soluta et molestiae
             corporis! Quasi aliquid ipsa ab tempore, expedita qui eum minima
@@ -122,13 +137,17 @@
             to="/shop"
             label="VISIT STORE"
             variant="teally"
-            class="w-1/2 md:w-1/4"
+            class="w-5/6 sm:w-1/2 md:w-1/3 lg:w-1/4"
           />
         </div>
       </div>
     </div>
     <!-- {{ products }} -->
-    <CustomerFavourites :orders="favourites" :products="products" />
+    <CustomerFavourites
+      :orders="favourites"
+      :products="products"
+      class="px-1/12"
+    />
   </div>
 </template>
 

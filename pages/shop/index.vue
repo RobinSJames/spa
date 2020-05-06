@@ -4,34 +4,64 @@
       <p class="text-sm font-bold text-teally uppercase mb-4">Categories</p>
       <div class="grid grid-cols-2 grid-rows-2 gap-4">
         <div
-          class="relative col-span-1 grid-span-1 w-full h-32 sm:h-40 bg-black"
+          class="relative col-span-1 grid-span-1 w-full h-32 sm:h-40 bg-black cursor-pointer"
         >
           <img
             src="/images/categories/category4.png"
             alt=""
             class="absolute w-full h-full object-cover object-center"
           />
+          <div
+            class="absolute w-full h-full bg-black opacity-50 hover:opacity-25"
+          ></div>
+          <h3 class="absolute bottom-0 pb-2 pl-4 text-xl text-white font-bold">
+            All Products
+          </h3>
         </div>
-        <div class="relative col-span-1 grid-span-1 w-full h-full bg-black">
+        <div
+          class="relative col-span-1 grid-span-1 w-full h-full bg-black cursor-pointer"
+        >
           <img
             src="/images/categories/category1.jpg"
             alt=""
             class="absolute w-full h-full object-cover object-center"
           />
+          <div
+            class="absolute w-full h-full bg-black opacity-50 hover:opacity-25"
+          ></div>
+          <h3 class="absolute bottom-0 pb-2 pl-4 text-xl text-white font-bold">
+            Oils
+          </h3>
         </div>
-        <div class="relative col-span-1 grid-span-1 w-full h-full bg-black">
+        <div
+          class="relative col-span-1 grid-span-1 w-full h-full bg-black cursor-pointer"
+        >
           <img
             src="/images/categories/category2.jpg"
             alt=""
             class="absolute w-full h-full object-cover object-center"
           />
+          <div
+            class="absolute w-full h-full bg-black opacity-50 hover:opacity-25"
+          ></div>
+          <h3 class="absolute bottom-0 pb-2 pl-4 text-xl text-white font-bold">
+            Salts
+          </h3>
         </div>
-        <div class="relative col-span-1 grid-span-1 w-full h-full bg-black">
+        <div
+          class="relative col-span-1 grid-span-1 w-full h-full bg-black cursor-pointer"
+        >
           <img
             src="/images/categories/category3.jpeg"
             alt=""
             class="absolute w-full h-full object-cover object-center"
           />
+          <div
+            class="absolute w-full h-full bg-black opacity-50 hover:opacity-25"
+          ></div>
+          <h3 class="absolute bottom-0 pb-2 pl-4 text-xl text-white font-bold">
+            Creams
+          </h3>
         </div>
       </div>
       <div class="h-x-tiny bg-black my-8"></div>
@@ -42,7 +72,10 @@
         v-for="product in products"
         :key="product._id"
         :img-src="'http://localhost:5000/' + product.productImage"
-        :sale-price="5"
+        :title="product.title"
+        :cost="product.cost"
+        :is-on-sale="product.isOnSale"
+        :sale-price="product.salePrice"
         class="pr-2"
         @view-action="setViewRoute(product._id)"
       />

@@ -12,11 +12,13 @@
       </div>
     </div>
     <div class="w-full sm:w-1/2 px-4">
-      <h1 class="text-5xl capitalize pb-4">{{ product.title }}</h1>
+      <h1 class="text-3xl md:text-5xl capitalize pb-4">{{ product.title }}</h1>
       <p v-if="product.availability" class="pb-4">{{ product.availability }}</p>
-      <p class="pb-4">{{ product.description }}</p>
-      <p class="text-2xl font-bold pb-4">{{ product.description }}</p>
-      <p class="pb-4">{{ product.description }}</p>
+      <p class="pb-4">{{ product.excerpt }}</p>
+      <p class="text-xl md:text-2xl font-bold pb-4">
+        {{ product.description }}
+      </p>
+      <p class="pb-4">{{ product.additionalDescription }}</p>
       <InputField label="Selection" type="select" class="pb-4" />
       <h3 v-if="priceByQuantity >= 0" class="text-xl pb-4">
         R {{ priceByQuantity }}

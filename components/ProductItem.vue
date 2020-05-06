@@ -1,19 +1,21 @@
 <template>
   <div class="flex flex-col w-1/2 md:w-1/3 mb-4">
     <img :src="imgSrc" alt="This is an image" class="w-full" />
-    <p class="text-base md:text-lg font-medium leading-tight py-2">
+    <p class="text-base md:text-xlg font-bold leading-tight py-2">
       {{ title }}
     </p>
-    <p v-if="salePrice" class="text-sale-red text-sm font-bold py-1">
+    <p v-if="isOnSale" class="text-sale-red text-base font-bold py-1">
       R {{ salePrice }}
     </p>
     <p
-      :class="salePrice ? 'line-through' : 'font-bold'"
-      class="text-teally text-sm py-1"
+      :class="isOnSale ? 'line-through text-sm' : 'font-bold text-base'"
+      class="text-teally py-1"
     >
       R {{ cost }}
     </p>
-    <div class="flex flex-col md:flex-row justify-between">
+    <div
+      class="flex flex-col md:flex-row justify-end md:justify-between items-end h-full"
+    >
       <button
         class="w-full bg-teally uppercase text-white text-xs font-bold py-2 mb-2 md:mr-2 md:mb-0"
         @click="$emit('view-action')"
@@ -44,6 +46,10 @@ export default {
     cost: {
       type: Number,
       default: 90
+    },
+    isOnSale: {
+      type: Boolean,
+      default: false
     },
     salePrice: {
       type: Number,

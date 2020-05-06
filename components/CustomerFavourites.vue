@@ -8,18 +8,28 @@
       <div
         v-for="order in setProductDetails()"
         :key="order._id"
-        class="relative cursor-pointer text-center mb-16 md:mb-0 md:pl-2"
+        class="relative cursor-pointer text-center mb-16 md:mb-0 md:pl-10"
         @click="toRouteId(order._id)"
       >
         <img :src="'http://localhost:5000/' + order.productImage" alt="" />
         <h4 class="text-3xl font-medium">{{ order.title }}</h4>
-        <h4 class="text-teally text-xl">R{{ order.cost }}</h4>
-        <div class="absolute top-0 right-0 w-full sm:w-1/2 md:w-full xl:w-/12">
+        <h4 v-if="!order.isOnSale" class="text-teally text-xl">
+          R{{ order.cost }}
+        </h4>
+        <h4 v-else class="text-sale-red text-xl font-bold">
+          R{{ order.salePrice }}
+        </h4>
+        <div
+          v-if="order.isOnSale"
+          class="absolute top-0 right-0 w-full sm:w-1/2 md:w-full xl:w-/12"
+        >
           <div
             style="clip-path: polygon(100% 0, 50% 0, 50% 45%, 100% 70%);"
             class="w-full h-20 lg:h-24 bg-sale-red z-10"
           >
-            <p class="text-white text-right lg:text-lg font-bold pr-4 pt-2">
+            <p
+              class="text-white text-right lg:text-lg font-bold pr-4 md:pr-2 lg:pr-4 pt-2"
+            >
               On Sale Now!
             </p>
           </div>
