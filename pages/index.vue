@@ -8,34 +8,34 @@
       <div class="w-full h-full bg-black opacity-50"></div>
       <div class="w-full absolute top-0 mt-10">
         <h3
-          class="text-xl text-white p-1/12 font-bold tracking-widest leading-loose"
+          class="text-xl md:text-3xl xl:text-4xl text-white p-1/12 font-bold leading-loose"
         >
           Rechange your senses.<br />
-          <span>All you need is the right</span>
-          <span class="text-teally uppercase">ambiance</span>
+          <span class="tracking-widest">All you need is the right</span>
+          <span class="text-teally uppercase tracking-widest">ambiance</span>.
         </h3>
       </div>
-      <div class="w-full absolute bottom-0 mb-2 pb-10 sm:pb-20 lg:pb-64">
+      <div class="w-full absolute bottom-0 mb-2 pb-10 sm:pb-20 lg:pb-40">
         <div
-          class="w-full h-full flex flex-col sm:flex-row items-center sm:justify-around text-xs sm:text-lg"
+          class="w-full h-full flex flex-col sm:flex-row items-center sm:justify-around text-xs sm:text-lg px-1/12 sm:px-0"
         >
           <AppButton
             to="/shop"
             label="MAKE BOOKING"
             variant="teally"
-            class="w-1/2 sm:w-1/4 mb-8 sm:mb-0"
+            class="w-full sm:w-1/4 lg:w-56 mb-8 sm:mb-0"
           />
           <AppButton
             to="/shop"
             label="VISIT STORE"
             variant="teally"
-            class="w-1/2 sm:w-1/4"
+            class="w-full sm:w-1/4 lg:w-56"
           />
         </div>
       </div>
     </div>
     <div
-      class="relative flex flex-col justify-center border-teally border-2 m-1/12 mt-20 sm:mt-24 md:mt-64 lg:mt-20 p-1/12"
+      class="relative flex flex-col justify-center border-teally border-2 m-1/12 mt-20 sm:mt-24 lg:mt-20 p-1/12"
     >
       <h1 class="text-5xl text-center z-10">Heading 1</h1>
       <h5 class="text-xl text-center">Subheading</h5>

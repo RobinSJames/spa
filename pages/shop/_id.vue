@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col p-1/12">
+  <div class="flex flex-col sm:flex-row p-1/12">
     <div class="w-full sm:w-1/2 pl-4">
       <div>
         <img :src="'http://localhost:5000/' + product.productImage" alt="" />
@@ -12,14 +12,23 @@
       </div>
     </div>
     <div class="w-full sm:w-1/2 px-4">
-      <h1 class="text-5xl capitalize">{{ product.title }}</h1>
-      <p v-if="product.availability">{{ product.availability }}</p>
-      <p>{{ product.description }}</p>
-      <p class="text-3xl font-bold">{{ product.description }}</p>
-      <p>{{ product.description }}</p>
-      <InputField label="Selection" type="select" />
-      <h3 class="text-xl">R {{ priceByQuantity }}</h3>
-      <InputField v-model="quantity" label="Quantity" type="number" :min="0" />
+      <h1 class="text-5xl capitalize pb-4">{{ product.title }}</h1>
+      <p v-if="product.availability" class="pb-4">{{ product.availability }}</p>
+      <p class="pb-4">{{ product.description }}</p>
+      <p class="text-2xl font-bold pb-4">{{ product.description }}</p>
+      <p class="pb-4">{{ product.description }}</p>
+      <InputField label="Selection" type="select" class="pb-4" />
+      <h3 v-if="priceByQuantity >= 0" class="text-xl pb-4">
+        R {{ priceByQuantity }}
+      </h3>
+      <InputField
+        v-model="quantity"
+        label="Quantity"
+        type="number"
+        :min="0"
+        :max="10"
+        class="pb-4"
+      />
       <AppButton label="Add to cart" variant="teally" />
     </div>
   </div>

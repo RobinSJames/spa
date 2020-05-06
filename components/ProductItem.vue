@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col w-1/2 md:w-1/3 px-2 mb-4">
+  <div class="flex flex-col w-1/2 md:w-1/3 mb-4">
     <img :src="imgSrc" alt="This is an image" class="w-full" />
     <p class="text-base md:text-lg font-medium leading-tight py-2">
       {{ title }}
