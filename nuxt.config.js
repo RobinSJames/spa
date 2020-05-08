@@ -60,7 +60,8 @@ export default {
 
   proxy: {
     '/api/': {
-      target: process.env.API_HOST
+      target: 'https://mockspa-api.herokuapp.com/'
+      // target: process.env.API_HOST
     }
   },
 

@@ -93,7 +93,6 @@ export default {
     await store.dispatch('products/fetchItems')
   },
   data: () => ({
-    api: process.env.API_HOST,
     orders: []
   }),
   computed: {
