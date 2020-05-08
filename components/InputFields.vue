@@ -12,7 +12,9 @@
       </select>
     </div>
     <div v-else>
-      <label class="tracking-widest">{{ label }}</label>
+      <label v-if="label !== 'Label'" class="tracking-widest">{{
+        label
+      }}</label>
       <input
         v-model="inputValue"
         :type="type"

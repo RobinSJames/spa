@@ -78,7 +78,7 @@
         :sale-price="product.salePrice"
         class="pr-2 md:pr-4 lg:pr-8 md:mb-8 lg:mb-10"
         @view-action="setViewRoute(product._id)"
-        @cart-action="addToCart(product._id, (quantity = 1))"
+        @cart-action="addToCart(product._id, 1)"
       />
     </ProductList>
   </div>
@@ -104,25 +104,41 @@ export default {
   methods: {
     setViewRoute(x) {
       this.$router.push(`/shop/${x}`)
-    },
-    setLocalStorage(x, y) {
-      const localCart = localStorage.getItem('cart')
-      const parseCart = JSON.parse(localCart)
-      const obj = {
-        product: x,
-        quantity: y
-      }
-      if (parseCart.length > 0) {
-        parseCart.push(obj)
-        localStorage.setItem('cart', JSON.stringify(parseCart))
-      } else {
-        this.orders.push(obj)
-        localStorage.setItem('cart', JSON.stringify(this.orders))
-      }
-    },
-    addToCart(x, y) {
-      this.setLocalStorage(x, y)
     }
+    // setLocalStorage(x, y) {
+    //   const localCart = localStorage.getItem('cart')
+    //   const parseCart = JSON.parse(localCart)
+    //   let obj = {}
+    //   let match = false
+    //   parseCart.forEach((element, i) => {
+    //     if (element.product === x) {
+    //       match = !match
+    //       const sum = +element.quantity + +y
+    //       obj = { product: element.product, quantity: sum }
+    //       parseCart.splice(i, 1)
+    //       parseCart.unshift(obj)
+    //       localStorage.setItem('cart', JSON.stringify(parseCart))
+    //     }
+    //   })
+    // console.log(match)
+    // console.log(obj)
+    // console.log(parseCart)
+    // if (parseCart.length > 0 && match === false) {
+    //   obj = { product: x, quantity: y }
+    //   parseCart.push(obj)
+    //   localStorage.setItem('cart', JSON.stringify(parseCart))
+    //   match = false
+    // }
+    // if (parseCart.length === 0) {
+    //   obj = { product: x, quantity: y }
+    //   this.orders.push(obj)
+    //   localStorage.setItem('cart', JSON.stringify(this.orders))
+    //   match = false
+    // }
+    // },
+    // addToCart(x, y) {
+    //   this.setLocalStorage(x, y)
+    // }
   }
 }
 </script>

@@ -1,7 +1,12 @@
 <template>
   <div>
     <specials />
-    <nav-bar :open="open" class="z-40" @isOpen="toggleNav" />
+    <nav-bar
+      :open="open"
+      :cart-contents="local.length"
+      class="z-40"
+      @isOpen="toggleNav"
+    />
     <nav-bar-toggle v-if="open" class="md:hidden" @notOpen="toggleNav" />
     <div v-if="loading" class="logo-container">
       <logo class="w-40 h-40" />
@@ -27,6 +32,11 @@ export default {
     windowWidth: null,
     open: false
   }),
+  computed: {
+    local() {
+      return this.$store.state.orders.local
+    }
+  },
   methods: {
     toggleNav() {
       this.open = !this.open

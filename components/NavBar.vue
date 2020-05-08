@@ -5,7 +5,10 @@
     <nuxt-link to="/cart" class="outline-none">
       <div class="relative md:hidden">
         <CartIcon class="w-8 h-10" />
-        <CartCounter class="absolute bottom-0 right-0" :counter="cartCount" />
+        <CartCounter
+          class="absolute bottom-0 right-0"
+          :counter="cartContents"
+        />
       </div>
     </nuxt-link>
     <nuxt-link to="/" class="outline-none">
@@ -89,7 +92,7 @@
           <div class="relative">
             <CartIcon class="w-8 h-10" />
             <CartCounter
-              :counter="cartCount"
+              :counter="cartContents"
               class="absolute bottom-0 right-0"
             />
           </div>
@@ -109,23 +112,15 @@ export default {
     open: {
       type: Boolean,
       default: false
+    },
+    cartContents: {
+      type: Number,
+      default: 0
     }
-  },
-  data: () => ({
-    cartCount: 0
-  }),
-  mounted() {
-    this.getCartLength()
   },
   methods: {
     toggle() {
       this.$emit('isOpen')
-    },
-    getCartLength() {
-      const cart = localStorage.getItem('cart')
-      const cartParse = JSON.parse(cart)
-      const cartLen = cartParse.length
-      this.cartCount = cartLen
     }
   }
 }
