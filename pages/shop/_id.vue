@@ -2,7 +2,10 @@
   <div class="flex flex-col sm:flex-row p-1/12">
     <div class="w-full sm:w-1/2 pl-4">
       <div>
-        <img :src="'http://localhost:5000/' + product.productImage" alt="" />
+        <img
+          :src="'https://mockspa-api.herokuapp.com/' + product.productImage"
+          alt=""
+        />
       </div>
       <div>
         <img src="" alt="" />
@@ -71,28 +74,6 @@ export default {
       await this.$store
         .dispatch('orders/addLocal', { obj })
         .then(this.$router.push('/cart'))
-      // const getCart = localStorage.getItem('cart')
-      // if (!getCart) {
-      //   this.orders.push(obj)
-      //   localStorage.setItem('cart', JSON.stringify(this.orders))
-      //   this.$router.push('/cart')
-      // } else if (getCart.length > 0) {
-      //   const parseCart = JSON.parse(getCart)
-      //   parseCart.forEach((element, i) => {
-      //     if (element.product === x) {
-      //       match = !match
-      //       const obj = { product: element.product, quantity: y }
-      //       parseCart.splice(i, 1)
-      //       parseCart.push(obj)
-      //       localStorage.setItem('cart', JSON.stringify(parseCart))
-      //       this.$router.push('/cart')
-      //     } else {
-      //       parseCart.push(obj)
-      //       localStorage.setItem('cart', JSON.stringify(parseCart))
-      //       this.$router.push('/cart')
-      //     }
-      //   })
-      // }
     },
     addToCart(x, y) {
       this.setLocalStorage(x, y)

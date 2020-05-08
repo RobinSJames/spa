@@ -71,7 +71,7 @@
       <ProductItem
         v-for="product in products"
         :key="product._id"
-        :img-src="'http://localhost:5000/' + product.productImage"
+        :img-src="'https://mockspa-api.herokuapp.com/' + product.productImage"
         :title="product.title"
         :cost="product.cost"
         :is-on-sale="product.isOnSale"
@@ -104,40 +104,6 @@ export default {
     setViewRoute(x) {
       this.$router.push(`/shop/${x}`)
     }
-    // setLocalStorage(x, y) {
-    //   const localCart = localStorage.getItem('cart')
-    //   const parseCart = JSON.parse(localCart)
-    //   let obj = {}
-    //   let match = false
-    //   parseCart.forEach((element, i) => {
-    //     if (element.product === x) {
-    //       match = !match
-    //       const sum = +element.quantity + +y
-    //       obj = { product: element.product, quantity: sum }
-    //       parseCart.splice(i, 1)
-    //       parseCart.unshift(obj)
-    //       localStorage.setItem('cart', JSON.stringify(parseCart))
-    //     }
-    //   })
-    // console.log(match)
-    // console.log(obj)
-    // console.log(parseCart)
-    // if (parseCart.length > 0 && match === false) {
-    //   obj = { product: x, quantity: y }
-    //   parseCart.push(obj)
-    //   localStorage.setItem('cart', JSON.stringify(parseCart))
-    //   match = false
-    // }
-    // if (parseCart.length === 0) {
-    //   obj = { product: x, quantity: y }
-    //   this.orders.push(obj)
-    //   localStorage.setItem('cart', JSON.stringify(this.orders))
-    //   match = false
-    // }
-    // },
-    // addToCart(x, y) {
-    //   this.setLocalStorage(x, y)
-    // }
   }
 }
 </script>

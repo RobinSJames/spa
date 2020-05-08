@@ -11,7 +11,10 @@
         class="relative cursor-pointer text-center mb-16 md:mb-0 md:pl-10"
         @click="toRouteId(order._id)"
       >
-        <img :src="'http://localhost:5000/' + order.productImage" alt="" />
+        <img
+          :src="'https://mockspa-api.herokuapp.com/' + order.productImage"
+          alt=""
+        />
         <h4 class="text-3xl font-medium">{{ order.title }}</h4>
         <h4 v-if="!order.isOnSale" class="text-teally text-xl">
           R{{ order.cost }}

@@ -19,7 +19,7 @@
           <p class="w-1/3 font-thin text-xs self-center">PRODUCT</p>
           <div class="w-2/3 flex items-center mb-4">
             <img
-              :src="'http://localhost:5000/' + product.productImage"
+              :src="'https://mockspa-api.herokuapp.com/' + product.productImage"
               alt=""
               class="w-20 h-20 mr-4"
             />
@@ -70,9 +70,11 @@
           <td class="py-2">
             <div class="flex">
               <img
-                :src="'http://localhost:5000/' + product.productImage"
+                :src="
+                  'https://mockspa-api.herokuapp.com/' + product.productImage
+                "
                 alt=""
-                class="w-20 mr-4"
+                class="w-20 h-20 mr-4"
               />
               <div class="flex flex-col justify-between">
                 <p
