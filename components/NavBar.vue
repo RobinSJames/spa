@@ -12,7 +12,9 @@
       </div>
     </nuxt-link>
     <nuxt-link to="/" class="outline-none">
-      <div class="flex items-center flex-no-shrink text-black mr-6">
+      <div
+        class="w-full flex items-center justify-center flex-no-shrink text-black mr-6"
+      >
         <img src="../assets/images/spa2.jpg" alt="logo" class="w-24" />
       </div>
     </nuxt-link>

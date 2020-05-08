@@ -102,7 +102,7 @@
           <div class="absolute bottom-0 w-1/2 h-1 mb-6 mx-10 bg-black"></div>
         </div>
       </nuxt-link>
-      <nuxt-link
+      <!-- <nuxt-link
         to="/login"
         class="relative flex flex-1 items-center border border-b pl-8"
       >
@@ -118,7 +118,7 @@
           </div>
           <div class="absolute bottom-0 w-1/2 h-1 mb-6 mx-10 bg-black"></div>
         </div>
-      </nuxt-link>
+      </nuxt-link> -->
     </div>
   </div>
 </template>
