@@ -70,7 +70,7 @@ export default {
 <style scoped lang="scss">
 .appButton {
   // border-radius: 3px;
-  height: 36px;
+  height: 42px;
   .appButton__icon > svg {
     width: 15px;
     height: 15px;

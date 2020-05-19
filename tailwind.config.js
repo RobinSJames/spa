@@ -12,7 +12,9 @@ module.exports = {
         dominant: '#197948',
         mrgray: '#e8e8e8',
         'sale-red': '#e53e3e',
-        'moss-green': '#007240'
+        'moss-green': '#007240',
+        'medium-gray': '#444444',
+        'dark-gray': '#222222'
       },
       spacing: {
         'x-tiny': '0.1rem',
@@ -50,6 +52,13 @@ module.exports = {
         '9/12': '75%',
         '10/12': '83.333333%',
         '11/12': '91.666667%'
+      },
+      borderColor: {
+        teally: '#48BCA0',
+        dominant: '#197948',
+        mrgray: '#e8e8e8',
+        'sale-red': '#e53e3e',
+        'moss-green': '#007240'
       }
     }
   },

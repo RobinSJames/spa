@@ -21,6 +21,7 @@
         class="w-full border p-2"
         :min="min"
         :max="max"
+        :placeholder="placeholder"
       />
     </div>
   </div>
@@ -52,6 +53,10 @@ export default {
     max: {
       type: Number,
       default: 0
+    },
+    placeholder: {
+      type: String,
+      default: 'This is a placeholder'
     }
   },
   computed: {

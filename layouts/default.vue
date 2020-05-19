@@ -12,6 +12,7 @@
       <logo class="w-40 h-40" />
     </div>
     <nuxt />
+    <Footer></Footer>
   </div>
 </template>
 
@@ -20,12 +21,14 @@ import Specials from '@/components/Specials'
 import NavBar from '@/components/NavBar'
 import NavBarToggle from '@/components/NavBarToggle'
 import Logo from '@/components/icons/Logo'
+import Footer from '~/components/Footer'
 export default {
   components: {
     Specials,
     NavBar,
     NavBarToggle,
-    Logo
+    Logo,
+    Footer
   },
   data: () => ({
     loading: false,
