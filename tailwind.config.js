@@ -59,6 +59,9 @@ module.exports = {
         mrgray: '#e8e8e8',
         'sale-red': '#e53e3e',
         'moss-green': '#007240'
+      },
+      height: {
+        '50%': '50perc'
       }
     }
   },

@@ -9,7 +9,7 @@
       <p class="py-2">FAQ</p>
       <p class="py-2">Contact</p>
     </div>
-    <div class="my-6 w-full flex flex-col py-1 justify-center">
+    <div class="mt-6 mb-10 w-full flex flex-col py-1 justify-center">
       <h3 class="font-serif text-center text-2xl my-2">Join our news letter</h3>
       <div class="flex justify-center">
         <InputFields
