@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen w-screen bg-teally">
+  <div class="h-screen w-screen">
     <nuxt />
   </div>
 </template>

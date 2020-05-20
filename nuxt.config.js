@@ -72,12 +72,16 @@ export default {
           login: { url: '/users/login', method: 'post', propertyName: 'token' },
           logout: { url: '/api/auth/logout', method: 'post' },
           user: { url: '/users/user', method: 'get', propertyName: 'user' }
-        }
+        },
         // tokenRequired: true,
-        // tokenType: 'bearer'
+        tokenType: 'bearer'
         // autoFetchUser: true
+      },
+      redirect: {
+        home: '/'
       }
-    }
+    },
+    plugins: ['plugins/nuxt-auth-redirect.js']
   },
   /*
    ** Build configuration

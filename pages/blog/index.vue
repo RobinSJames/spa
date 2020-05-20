@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex flex-col items-center">
-      <h3 class="text-5xl">Blog</h3>
+      <h3 class="font-serif text-5xl">Blog</h3>
       <div class="w-40 h-tiny bg-teally mb-10"></div>
     </div>
     <BlogList>

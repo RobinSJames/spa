@@ -23,7 +23,7 @@ export default {
       default: 'Jane Doe'
     },
     createdAt: {
-      type: Date,
+      type: Number,
       default: Date.now
     },
     body: {
