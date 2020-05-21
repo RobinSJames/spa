@@ -55,7 +55,7 @@ export default {
     setVariant() {
       const className = {}
       const variant = this.disabled
-        ? `bg-${this.variant}-disable text-white cursor-not-allowed`
+        ? `bg-sale-red border border-sale-red text-white cursor-not-allowed`
         : `bg-${this.variant} text-white hover:bg-${this.variant}-hover`
       className[variant] = true
       return className
