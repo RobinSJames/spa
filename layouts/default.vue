@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="font-sans">
     <specials />
     <nav-bar
       :open="open"

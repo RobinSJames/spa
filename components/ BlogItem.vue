@@ -1,5 +1,5 @@
 <template>
-  <div class=" p-1/12">
+  <div class="mt-1/12">
     <div class="h-80 overflow-y-hidden mb-4">
       <img
         :src="blogImage"
@@ -7,7 +7,7 @@
         class="h-full w-full object-left object-cover"
       />
     </div>
-    <div class="flex">
+    <div class="flex p-1 md:p-2">
       <div class="w-full md:w-1/2 flex flex-col justify-between pr-4">
         <h3 class="font-serif text-4xl leading-tight">
           {{ title }}

@@ -1,5 +1,7 @@
 <template>
-  <div>Siblings</div>
+  <section class="">
+    <slot></slot>
+  </section>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-full flex flex-col justify-center items-center">
-    <div class="p-1/12 border">
+    <div class="p-1/12 border rounded">
       <ValidationObserver v-slot="{ invalid }">
         <ValidationProvider
           v-slot="{ errors }"

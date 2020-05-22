@@ -9,18 +9,18 @@
         v-for="blogItem in blogItems"
         :key="blogItem.id"
         class="w-full md:w-1/3 px-1 cursor-pointer"
-        @click="$router.push(`/blog/${blogItem.id}`)"
+        @click="$router.push(`/blog/${blogItem._id}`)"
       >
         <div class="h-40">
           <img
-            :src="blogItem.blogImage"
+            :src="'https://mockspa-api.herokuapp.com/' + blogItem.blogImage"
             alt=""
             class="h-full w-full object-left object-cover"
           />
         </div>
-        <p class="text-medium-gray py-4">{{ blogItem.date }}</p>
+        <p class="text-medium-gray py-4">{{ blogItem.createdAt }}</p>
         <h1 class="font-serif text-3xl">{{ blogItem.title }}</h1>
-        <p class="text-medium-gray mt-2">{{ blogItem.body }}</p>
+        <p class="text-medium-gray mt-2">{{ createExcerpt(blogItem.body) }}</p>
       </div>
     </div>
   </section>
@@ -29,25 +29,16 @@
 <script>
 export default {
   props: {
-    // blogImage: {
-    //   type: String,
-    //   default: '/images/branch.png'
-    // },
-    // title: {
-    //   type: String,
-    //   default: 'This is the title'
-    // },
-    // date: {
-    //   type: String,
-    //   default: '12/04/2020'
-    // },
-    // body: {
-    //   type: String,
-    //   default: 'This is a body of test that needs to be truncated.'
-    // }
     blogItems: {
       type: Array,
       default: () => []
+    }
+  },
+  methods: {
+    createExcerpt(w, x = 55, y = w.length, z = '...') {
+      const text = w.split('')
+      text.splice(x, y, z)
+      return text.join('')
     }
   }
 }

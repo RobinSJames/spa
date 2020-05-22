@@ -1,15 +1,18 @@
 <template>
   <section class="p-1/12">
-    <h1 class="text-5xl text-center">{{ title }}</h1>
+    <h1 class="text-5xl text-center">{{ post.title }}</h1>
     <div class="text-center text-medium-gray tracking-eidest">
-      {{ author }} | {{ date }}
+      {{ post.author }} | {{ post.createdAt }}
     </div>
     <div>
       <div>
-        <img :src="blogImage" alt="" />
+        <img
+          :src="'https://mockspa-api.herokuapp.com/' + post.blogImage"
+          alt=""
+        />
       </div>
-      <div>
-        {{ body }}
+      <div class="text-medium-gray py-6 leading-loose">
+        {{ post.body }}
       </div>
       <p
         class="text-teally text-center py-6 underline cursor-pointer"
@@ -18,7 +21,7 @@
         SHOP AMBIANCE
       </p>
     </div>
-    <LatestBlog class="mt-10" :blog-items="latest" />
+    <LatestBlog class="mt-10" :blog-items="posts" />
   </section>
 </template>
 
@@ -26,6 +29,10 @@
 import LatestBlog from '~/components/LatestBlog'
 export default {
   components: { LatestBlog },
+  async fetch({ store, params }) {
+    await store.dispatch('posts/fetchItem', { id: params.id })
+    await store.dispatch('posts/fetchItems')
+  },
   data: () => ({
     title: 'This is the title',
     author: 'Jane Doe',
@@ -56,7 +63,15 @@ export default {
         body: 'This is the body of the latest post.'
       }
     ]
-  })
+  }),
+  computed: {
+    post() {
+      return this.$store.state.posts.single
+    },
+    posts() {
+      return this.$store.state.posts.all
+    }
+  }
 }
 </script>
 

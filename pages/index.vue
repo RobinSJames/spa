@@ -8,11 +8,13 @@
       <div class="w-full h-full bg-black opacity-50"></div>
       <div class="w-full absolute top-0 mt-10">
         <h3
-          class="text-xl md:text-3xl xl:text-4xl text-white p-1/12 font-bold leading-loose"
+          class="text-xl md:text-3xl xl:text-4xl text-white p-1/12 font-medium leading-loose"
         >
           Recharge your senses.<br />
           <span class="tracking-widest">With the right</span>
-          <span class="text-teally uppercase tracking-widest">ambiance</span>.
+          <span class="font-bold text-teally uppercase tracking-widest">
+            ambiance </span
+          >.
         </h3>
       </div>
       <div class="w-full absolute bottom-0 mb-2 pb-10 sm:pb-20 lg:pb-40">

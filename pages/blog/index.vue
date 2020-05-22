@@ -1,19 +1,20 @@
 <template>
-  <div>
+  <div class="px-1/12 pt-1/12">
     <div class="flex flex-col items-center">
       <h3 class="font-serif text-5xl">Blog</h3>
-      <div class="w-40 h-tiny bg-teally mb-10"></div>
+      <div class="w-40 h-tiny bg-teally mb-2"></div>
+      <div class="w-16 h-tiny bg-medium-gray mb-10"></div>
     </div>
     <BlogList>
       <BlogItem
-        v-for="blog in blogs"
-        :key="blog.id"
-        :blog-image="blog.blogImage"
+        v-for="blog in posts"
+        :key="blog._id"
+        :blog-image="'https://mockspa-api.herokuapp.com/' + blog.blogImage"
         :title="blog.title"
         :author="blog.author"
         :date="blog.date"
         :body="blog.body"
-        @clicked="$router.push(`/blog/${blog.id}`)"
+        @clicked="$router.push(`/blog/${blog._id}`)"
       />
     </BlogList>
   </div>
@@ -24,6 +25,9 @@ import BlogItem from '~/components/ BlogItem'
 import BlogList from '~/components/BlogList'
 export default {
   components: { BlogItem, BlogList },
+  async fetch({ store }) {
+    await store.dispatch('posts/fetchItems')
+  },
   data: () => ({
     blogs: [
       {
@@ -46,6 +50,11 @@ export default {
       }
     ]
   }),
+  computed: {
+    posts() {
+      return this.$store.state.posts.all
+    }
+  },
   methods: {}
 }
 </script>

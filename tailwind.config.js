@@ -61,7 +61,7 @@ module.exports = {
         'moss-green': '#007240'
       },
       height: {
-        '50%': '50perc'
+        half: '50vh'
       }
     }
   },
