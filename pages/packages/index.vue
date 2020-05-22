@@ -5,7 +5,7 @@
       <div class="w-40 h-tiny bg-teally mb-2"></div>
       <div class="w-16 h-tiny bg-medium-gray mb-10"></div>
     </div>
-    <PackageList class="flex flex-wrap">
+    <PackageList class="flex flex-wrap mt-1/12">
       <PackageItem
         v-for="object in objects"
         :key="object"
@@ -13,7 +13,7 @@
         :title="object.title"
         :body="object.body"
         :price="object.price"
-        class="pr-2 md:pr-4 lg:pr-8 md:mb-8 lg:mb-10"
+        class="md:pr-4 lg:pr-8 md:mb-8 lg:mb-10"
       />
     </PackageList>
   </div>

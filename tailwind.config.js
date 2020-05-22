@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         teally: '#48BCA0',
         dominant: '#197948',
-        mrgray: '#e8e8e8',
+        mrgray: '#efefef',
         'sale-red': '#e53e3e',
         'moss-green': '#007240',
         'medium-gray': '#444444',
@@ -66,7 +66,9 @@ module.exports = {
     }
   },
   variants: {
-    borderColor: ['responsive', 'hover', 'focus', 'group-hover']
+    borderColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    scale: ['responsive', 'hover', 'focus', 'group-hover'],
+    width: ['responsive', 'hover', 'focus', 'group-hover']
   },
   plugins: []
 }

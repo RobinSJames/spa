@@ -52,10 +52,28 @@
         <h3 class="tracking-widest mb-1">CUSTOMER REVIEWS</h3>
         <p class="text-sm mb-2">Based on {{ reviews.length }} reviews</p>
         <button
-          class="border border-teally text-medium-gray text-sm font-bold hover:bg-teally hover:text-white py-2 px-4"
+          class="border border-teally text-medium-gray text-sm font-bold hover:bg-teally hover:text-white py-2 px-4 focus:bg-teally focus:text-white focus:outline-none"
+          @click="showFields = !showFields"
         >
           WRITE A REVIEW
         </button>
+      </div>
+      <div v-if="showFields" class="mb-8">
+        <div>
+          <InputField type="textarea" label="Review" class="my-4" />
+          <AppButton label="SUBMIT" variant="teally" />
+        </div>
+        <div>
+          Please
+          <span class="hover:text-teally hover:underline cursor-pointer"
+            >login</span
+          >
+          or
+          <span class="hover:text-teally hover:underline cursor-pointer"
+            >register</span
+          >
+          to leave a review.
+        </div>
       </div>
       <ReviewList>
         <ReviewItem
@@ -95,6 +113,7 @@ export default {
     await store.dispatch('products/fetchItems')
   },
   data: () => ({
+    showFields: false,
     quantity: 1,
     orders: [],
     reviews: [

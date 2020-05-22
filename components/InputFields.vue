@@ -11,6 +11,10 @@
         >
       </select>
     </div>
+    <div v-if="type === 'textarea'">
+      <label class="tracking-widest">{{ label }}</label>
+      <textarea :cols="cols" :rows="rows" class="w-full p-2"></textarea>
+    </div>
     <div v-else>
       <label v-if="label !== 'Label'" class="tracking-widest">{{
         label
@@ -57,6 +61,14 @@ export default {
     placeholder: {
       type: String,
       default: 'This is a placeholder'
+    },
+    cols: {
+      type: Number,
+      default: 10
+    },
+    rows: {
+      type: Number,
+      default: 5
     }
   },
   computed: {

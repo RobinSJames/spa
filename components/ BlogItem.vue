@@ -1,14 +1,18 @@
 <template>
   <div class="mt-1/12">
-    <div class="h-80 overflow-y-hidden mb-4">
+    <div class="h-half overflow-y-hidden rounded-tl-lg rounded-tr-lg">
       <img
         :src="blogImage"
         alt=""
-        class="h-full w-full object-left object-cover"
+        class="h-full w-full object-right md:object-center object-cover"
       />
     </div>
-    <div class="flex p-1 md:p-2">
-      <div class="w-full md:w-1/2 flex flex-col justify-between pr-4">
+    <div
+      class="flex flex-col md:flex-row border border-t-0 rounded-bl-lg rounded-br-lg py-2 px-3"
+    >
+      <div
+        class="w-full md:w-1/2 flex flex-col justify-between mb-4 md:mb-0 md:pr-4"
+      >
         <h3 class="font-serif text-4xl leading-tight">
           {{ title }}
         </h3>
@@ -23,7 +27,7 @@
         <AppButton
           variant="teally"
           label="READ MORE"
-          class="w-1/2"
+          class="w-1/2 rounded-md"
           @clicked="$emit('clicked')"
         />
       </div>
