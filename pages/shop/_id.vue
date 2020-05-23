@@ -62,7 +62,7 @@
         </button>
       </div>
       <div v-if="showFields" class="mb-8">
-        <div v-if="loggedIn">
+        <div v-if="loggedIn.lenght > 0">
           <InputField
             v-model="title"
             type="text"
