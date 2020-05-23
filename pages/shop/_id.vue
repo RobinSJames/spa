@@ -50,7 +50,10 @@
     <div class="bg-mrgray p-1/12">
       <div class="mb-10">
         <h3 class="tracking-widest mb-1">CUSTOMER REVIEWS</h3>
-        <p class="text-sm mb-2">Based on {{ reviews.length }} reviews</p>
+        <p v-if="parseReviews(reviews).length > 0" class="text-sm mb-4">
+          Based on {{ parseReviews(reviews).length }} reviews
+        </p>
+        <p v-else class="text-sm mb-4">Be the first to write a review</p>
         <button
           class="border border-teally text-medium-gray text-sm font-bold hover:bg-teally hover:text-white py-2 px-4 focus:bg-teally focus:text-white focus:outline-none"
           @click="showFields = !showFields"
@@ -59,28 +62,43 @@
         </button>
       </div>
       <div v-if="showFields" class="mb-8">
-        <div>
-          <InputField type="textarea" label="Review" class="my-4" />
-          <AppButton label="SUBMIT" variant="teally" />
+        <div v-if="loggedIn">
+          <InputField
+            v-model="title"
+            type="text"
+            placeholder="Title"
+            class="my-4"
+          />
+          <InputField
+            v-model="body"
+            type="textarea"
+            placeholder="Description"
+            class="my-4"
+          />
+          <AppButton
+            label="SUBMIT"
+            variant="teally"
+            @clicked="submitReview()"
+          />
         </div>
-        <div>
+        <div v-else>
           Please
-          <span class="hover:text-teally hover:underline cursor-pointer"
-            >login</span
-          >
+          <span class="text-teally hover:underline cursor-pointer">login</span>
           or
-          <span class="hover:text-teally hover:underline cursor-pointer"
+          <span class="text-teally hover:underline cursor-pointer"
             >register</span
           >
-          to leave a review.
+          an account to leave a review.
         </div>
       </div>
       <ReviewList>
         <ReviewItem
-          v-for="review in reviews"
+          v-for="review in parseReviews(reviews)"
           :key="review.id"
           :title="review.title"
           :reviewed-by="review.reviewedBy"
+          :body="review.body"
+          :created-at="review.createdAt"
         />
       </ReviewList>
     </div>
@@ -106,39 +124,21 @@ export default {
     ReviewList,
     CustomerFavourites
   },
-  async fetch({ store, params }) {
+  async asyncData({ store, params }) {
     await store.dispatch('products/fetchItem', { id: params.id })
     await store.dispatch('orders/fetchLocal')
     await store.dispatch('orders/fetchFavourites')
     await store.dispatch('products/fetchItems')
+    await store.dispatch('user/fetchItems')
+    await store.dispatch('reviews/fetchItems')
   },
   data: () => ({
     showFields: false,
     quantity: 1,
     orders: [],
-    reviews: [
-      {
-        id: 1,
-        title: 'Awesome',
-        reviewedBy: 'Jackson',
-        createdAt: Date.now,
-        body: 'This is a minimum viable product for sure'
-      },
-      {
-        id: 2,
-        title: 'Awesome',
-        reviewedBy: 'Jackson',
-        createdAt: Date.now,
-        body: 'This is a minimum viable product for sure'
-      },
-      {
-        id: 3,
-        title: 'Awesome',
-        reviewedBy: 'Jackson',
-        createdAt: Date.now,
-        body: 'This is a minimum viable product for sure'
-      }
-    ]
+    title: '',
+    body: '',
+    rating: 4
   }),
   computed: {
     product() {
@@ -152,6 +152,12 @@ export default {
     },
     products() {
       return this.$store.state.products.all
+    },
+    loggedIn() {
+      return this.$store.state.user.all
+    },
+    reviews() {
+      return this.$store.state.reviews.all
     }
   },
   methods: {
@@ -171,6 +177,34 @@ export default {
       const getCart = localStorage.getItem('cart')
       if (getCart) return true
       else return false
+    },
+    parseReviews(reviews) {
+      const filteredReview = []
+      if (reviews) {
+        reviews.forEach((element) => {
+          if (element.product === this.$route.params.id)
+            filteredReview.push(element)
+        })
+        return filteredReview
+      } else {
+        console.log('Hit')
+      }
+    },
+    async submitReview() {
+      const form = {
+        product: this.$route.params.id,
+        title: this.title,
+        reviewedBy: this.loggedIn.name,
+        body: this.body,
+        rating: 4
+      }
+      await this.$store
+        .dispatch('reviews/createItem', form)
+        .then(
+          (this.title = ''),
+          (this.body = ''),
+          (this.showFields = !this.showFields)
+        )
     }
   }
 }
