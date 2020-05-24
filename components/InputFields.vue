@@ -2,7 +2,7 @@
   <div>
     <div v-if="type === 'select'">
       <label class="tracking-widest">{{ label }}</label>
-      <select type="select" class="w-full border p-2">
+      <select type="select" class="w-full border p-2" :class="inputClass">
         <option
           v-for="(option, index) in options"
           :key="index"
@@ -11,7 +11,7 @@
         >
       </select>
     </div>
-    <div v-if="type === 'textarea'">
+    <div v-else-if="type === 'textarea'">
       <label v-if="label" class="tracking-widest">{{ label }}</label>
       <textarea
         v-model="inputValue"
@@ -19,6 +19,7 @@
         :cols="cols"
         :rows="rows"
         class="w-full p-2"
+        :class="inputClass"
       ></textarea>
     </div>
     <div v-else>
@@ -32,6 +33,7 @@
         :min="min"
         :max="max"
         :placeholder="placeholder"
+        :class="inputClass"
       />
     </div>
   </div>
@@ -40,6 +42,10 @@
 <script>
 export default {
   props: {
+    inputClass: {
+      type: String,
+      default: ''
+    },
     value: {
       type: [Number, String, Object, Array, Date],
       default: ''

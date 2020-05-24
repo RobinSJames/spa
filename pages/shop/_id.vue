@@ -83,9 +83,15 @@
         </div>
         <div v-else>
           Please
-          <span class="text-teally hover:underline cursor-pointer">login</span>
+          <span
+            class="text-teally hover:underline cursor-pointer"
+            @click="$router.push('/login')"
+            >login</span
+          >
           or
-          <span class="text-teally hover:underline cursor-pointer"
+          <span
+            class="text-teally hover:underline cursor-pointer"
+            @click="$router.push('/register')"
             >register</span
           >
           an account to leave a review.

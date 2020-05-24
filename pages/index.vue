@@ -125,7 +125,7 @@
           class="object-cover object-top h-full w-full"
         />
         <div
-          class="absolute inset-y-0 w-full h-full py-10 md:py-20 px-1/12 pr-4/12"
+          class="absolute inset-y-0 w-full h-full py-10 md:py-20 px-1/12 pr-1/6 md:pr-4/12"
         >
           <h4 class="text-4xl md:mb-10">This is the title</h4>
           <div class="w-40 h-tiny bg-teally mb-10"></div>

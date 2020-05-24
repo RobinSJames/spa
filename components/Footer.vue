@@ -14,10 +14,15 @@
       <div class="flex justify-center">
         <InputFields
           class="w-8/12 md:w-4/12"
+          :input-class="'rounded-tl-lg rounded-bl-lg'"
           type="text"
           placeholder="myemail@example.com"
         ></InputFields>
-        <AppButton class="" variant="teally" label="SUBSCRIBE" />
+        <AppButton
+          class="rounded-tr-lg rounded-br-lg"
+          variant="teally"
+          label="SUBSCRIBE"
+        />
       </div>
     </div>
     <div

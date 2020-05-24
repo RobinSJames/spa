@@ -7,7 +7,9 @@
         class="transform group-hover:scale-150 transition duration-1000 ease-in-out h-full w-full object-fit object-cover"
       />
     </div>
-    <div class="p-1/12 bg-mrgray text-center rounded-br-lg rounded-bl-lg">
+    <div
+      class="p-1/12 bg-lightest-green text-center rounded-br-lg rounded-bl-lg"
+    >
       <h1 class="font-serif text-3xl py-2 leading-tight">
         {{ title }}
       </h1>

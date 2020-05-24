@@ -14,7 +14,8 @@ module.exports = {
         'sale-red': '#e53e3e',
         'moss-green': '#007240',
         'medium-gray': '#444444',
-        'dark-gray': '#222222'
+        'dark-gray': '#222222',
+        'lightest-green': '#efffff'
       },
       spacing: {
         'x-tiny': '0.1rem',

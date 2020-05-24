@@ -52,7 +52,9 @@
       </ValidationObserver>
       <div class="flex justify-between text-sm pt-1/12">
         <nuxt-link to="/passwordreset"><p>Forgot password?</p></nuxt-link>
-        <nuxt-link to="/signup"><p>Sign up</p></nuxt-link>
+        <nuxt-link to="/register"
+          ><p class="hover:text-teally">Sign up</p></nuxt-link
+        >
       </div>
     </div>
   </div>
@@ -67,7 +69,7 @@ export default {
   data: () => ({
     email: '',
     // email: 'admin@admin.com',
-    password: 'admin123456'
+    password: ''
   }),
   methods: {
     loginUser() {
