@@ -8,13 +8,14 @@
     <PackageList class="flex flex-wrap mt-1/12">
       <PackageItem
         v-for="object in objects"
+        :id="object.id"
         :key="object.id"
         :package-image="object.packageImage"
         :title="object.title"
         :body="object.body"
         :price="object.price"
-        :id="object.id"
         class="md:pr-4 lg:pr-8 md:mb-8 lg:mb-10"
+        background="lightest-green"
       />
     </PackageList>
   </div>

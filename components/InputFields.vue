@@ -24,7 +24,11 @@
     </div>
     <div v-else-if="type === 'date'">
       <label v-if="label" class="tracking-widest">{{ label }}</label>
-      <FlatPickr :config="config" class="w-full border p-2" />
+      <FlatPickr
+        :config="config"
+        class="w-full border p-2"
+        :class="rounded ? 'rounded-lg' : ''"
+      />
     </div>
     <div v-else>
       <label v-if="label !== 'Label'" class="tracking-widest">{{
@@ -88,6 +92,10 @@ export default {
     rows: {
       type: Number,
       default: 5
+    },
+    rounded: {
+      type: Boolean,
+      default: false
     },
     config: {
       type: Object,

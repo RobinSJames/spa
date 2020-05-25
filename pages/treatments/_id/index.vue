@@ -1,7 +1,6 @@
 <template>
   <div>
-    ID packages page
-    <nuxt-child></nuxt-child>
+    ID treatments page
   </div>
 </template>
 

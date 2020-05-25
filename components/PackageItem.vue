@@ -8,7 +8,8 @@
       />
     </div>
     <div
-      class="p-1/12 bg-lightest-green text-center rounded-br-lg rounded-bl-lg"
+      class="p-1/12 text-center rounded-br-lg rounded-bl-lg"
+      :class="background === 'teally' ? 'bg-mrgray' : 'bg-lightest-green'"
     >
       <h1 class="font-serif text-3xl py-2 leading-tight capitalize">
         {{ title }}
@@ -25,7 +26,7 @@
         label="MAKE BOOKING"
         variant="teally"
         class="my-2"
-        @clicked="$router.push(`/packages/${id}/booking`)"
+        :to="`/packages/${id}/booking`"
       />
     </div>
   </div>
@@ -55,6 +56,10 @@ export default {
     id: {
       type: [String, Number],
       default: '1'
+    },
+    background: {
+      type: String,
+      default: 'teally'
     }
   }
 }
