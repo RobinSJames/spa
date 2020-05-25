@@ -8,11 +8,12 @@
     <PackageList class="flex flex-wrap mt-1/12">
       <PackageItem
         v-for="object in objects"
-        :key="object"
+        :key="object.id"
         :package-image="object.packageImage"
         :title="object.title"
         :body="object.body"
         :price="object.price"
+        :id="object.id"
         class="md:pr-4 lg:pr-8 md:mb-8 lg:mb-10"
       />
     </PackageList>
@@ -28,22 +29,24 @@ export default {
     objects: [
       {
         id: 1,
-        title: 'This is the heading',
+        title: 'The four musketeers',
         body:
-          'This is a very short body but what if it were longer how would it look when rendered',
-        price: 1100
+          'Good things come in threes, so why not award yourself and three friends a breakfast buffet and our full treatment package.',
+        price: 3300
       },
       {
         id: 2,
-        title: 'This is the heading',
-        body: 'This is a very short body',
-        price: 1100
+        title: 'Couples therapy',
+        body:
+          "We aren't certified therapists but we've yet to have a couple denounce our methods",
+        price: 1500
       },
       {
         id: 3,
-        title: 'This is the heading',
-        body: 'This is a very short body',
-        price: 1100
+        title: 'Hands Solo',
+        body:
+          'It is said that solace can only be achieved alone and we simply offer a helping hand',
+        price: 750
       }
     ]
   })

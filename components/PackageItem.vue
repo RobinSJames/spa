@@ -10,20 +10,31 @@
     <div
       class="p-1/12 bg-lightest-green text-center rounded-br-lg rounded-bl-lg"
     >
-      <h1 class="font-serif text-3xl py-2 leading-tight">
+      <h1 class="font-serif text-3xl py-2 leading-tight capitalize">
         {{ title }}
       </h1>
       <p class="text-sm text-medium-gray">{{ body }}</p>
       <h1 class="font-serif text-2xl font-bold pt-6">R {{ price }}</h1>
-      <p class="font-bold text-sm text-teally py-2 uppercase hover:underline">
+      <p
+        class="font-bold text-sm text-teally py-2 uppercase hover:underline cursor-pointer"
+        @click="$router.push(`/packages/${id}`)"
+      >
         I'm interested
       </p>
+      <AppButton
+        label="MAKE BOOKING"
+        variant="teally"
+        class="my-2"
+        @clicked="$router.push(`/packages/${id}/booking`)"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import AppButton from '~/components/AppButton'
 export default {
+  components: { AppButton },
   props: {
     packageImage: {
       type: String,
@@ -40,6 +51,10 @@ export default {
     price: {
       type: Number,
       default: 0
+    },
+    id: {
+      type: [String, Number],
+      default: '1'
     }
   }
 }

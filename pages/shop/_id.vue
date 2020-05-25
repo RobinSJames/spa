@@ -193,7 +193,7 @@ export default {
         })
         return filteredReview
       } else {
-        console.log('Hit')
+        // console.log('Hit')
       }
     },
     async submitReview() {

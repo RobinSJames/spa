@@ -22,6 +22,10 @@
         :class="inputClass"
       ></textarea>
     </div>
+    <div v-else-if="type === 'date'">
+      <label v-if="label" class="tracking-widest">{{ label }}</label>
+      <FlatPickr :config="config" class="w-full border p-2" />
+    </div>
     <div v-else>
       <label v-if="label !== 'Label'" class="tracking-widest">{{
         label
@@ -40,7 +44,10 @@
 </template>
 
 <script>
+import FlatPickr from 'vue-flatpickr-component'
+import 'flatpickr/dist/flatpickr.css'
 export default {
+  components: { FlatPickr },
   props: {
     inputClass: {
       type: String,
@@ -81,6 +88,17 @@ export default {
     rows: {
       type: Number,
       default: 5
+    },
+    config: {
+      type: Object,
+      default: () => {
+        return {
+          altFormat: 'j M, Y',
+          altInput: true,
+          dateFormat: 'd-m-Y',
+          minDate: 'today'
+        }
+      }
     }
   },
   computed: {

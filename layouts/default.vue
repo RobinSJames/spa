@@ -43,6 +43,18 @@ export default {
   methods: {
     toggleNav() {
       this.open = !this.open
+      if (this.open === true) this.disableScrolling()
+      else this.enableScrolling()
+    },
+    disableScrolling() {
+      const x = window.scrollX
+      const y = window.scrollY
+      window.onscroll = function() {
+        window.scrollTo(x, y)
+      }
+    },
+    enableScrolling() {
+      window.onscroll = function() {}
     }
   }
 }

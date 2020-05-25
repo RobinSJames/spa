@@ -181,9 +181,9 @@ export default {
   methods: {
     getUser() {
       if (this.$auth) {
-        console.log(this.$auth)
+        // console.log(this.$auth)
       } else {
-        console.log('Not logged in')
+        // console.log('Not logged in')
       }
     }
   }
