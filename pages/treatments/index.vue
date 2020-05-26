@@ -1,5 +1,5 @@
 <template>
-  <div class="px-1/12 pt-1/12">
+  <div class="px-1/12 md:px-1/6 lg:px-1/4 pt-1/12 md:pt-16">
     <div class="flex flex-col items-center">
       <h3 class="font-serif text-5xl">Treatments</h3>
       <div class="w-40 h-tiny bg-teally mb-2"></div>
@@ -7,13 +7,13 @@
     </div>
     <PackageList class="flex flex-wrap mt-1/12">
       <PackageItem
-        v-for="object in objects"
-        :id="object.id"
-        :key="object.id"
-        :package-image="object.packageImage"
+        v-for="object in treatments"
+        :id="object._id"
+        :key="object._id"
+        :package-image="object.treatmentImage"
         :title="object.title"
-        :body="object.body"
-        :price="object.price"
+        :body="object.excerpt"
+        :price="object.cost"
         class="md:pr-4 lg:pr-8 md:mb-8 lg:mb-10"
       />
     </PackageList>
@@ -25,31 +25,14 @@ import PackageItem from '~/components/PackageItem'
 import PackageList from '~/components/PackageList'
 export default {
   components: { PackageItem, PackageList },
-  data: () => ({
-    objects: [
-      {
-        id: 1,
-        title: 'The four musketeers',
-        body:
-          'Good things come in threes, so why not award yourself and three friends a breakfast buffet and our full treatment package.',
-        price: 3300
-      },
-      {
-        id: 2,
-        title: 'Couples therapy',
-        body:
-          "We aren't certified therapists but we've yet to have a couple denounce our methods",
-        price: 1500
-      },
-      {
-        id: 3,
-        title: 'Hands Solo',
-        body:
-          'It is said that solace can only be achieved alone and we simply offer a helping hand',
-        price: 750
-      }
-    ]
-  })
+  async fetch({ store }) {
+    await store.dispatch('treatments/fetchItems')
+  },
+  computed: {
+    treatments() {
+      return this.$store.state.treatments.all
+    }
+  }
 }
 </script>
 

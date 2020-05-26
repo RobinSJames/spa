@@ -37,7 +37,7 @@
       </div>
     </div>
     <div
-      class="relative flex flex-col justify-center border-teally border-2 m-1/12 mt-20 sm:mt-24 lg:mt-20 p-1/12"
+      class="relative flex flex-col justify-center border-teally border-2 m-1/12 mt-20 sm:mt-24 lg:mt-20 md:mx-1/6 lg:mx-1/5 p-1/12"
     >
       <h1 class="text-5xl text-center z-10">Heading 1</h1>
       <h5 class="text-xl text-center">Subheading</h5>
@@ -57,10 +57,10 @@
       />
     </div>
     <div
-      class="grid grid-cols-1 md:grid-cols-2 grid-rows-4 gap-4 px-1/12 cursor-pointer"
+      class="grid grid-cols-1 md:grid-cols-2 grid-rows-4 gap-4 px-1/12 md:px-1/6 lg:px-1/5"
     >
       <div
-        class="relative bg-black row-span-2 md:row-span-4"
+        class="relative bg-black row-span-2 md:row-span-4 cursor-pointer"
         @click="$router.push('/shop')"
       >
         <img
@@ -74,7 +74,7 @@
         </div>
       </div>
       <div
-        class="relative bg-teally md:row-span-2"
+        class="relative bg-teally md:row-span-2 cursor-pointer"
         @click="$router.push('/blog')"
       >
         <img
@@ -90,7 +90,7 @@
         </div>
       </div>
       <div
-        class="relative bg-dominat md:row-span-2 h-64"
+        class="relative bg-dominat md:row-span-2 h-64 cursor-pointer"
         @click="$router.push('/treatments')"
       >
         <img
@@ -105,7 +105,7 @@
       </div>
     </div>
     <div
-      class="flex flex-col justify-center border-teally border-2 m-1/12 p-1/12"
+      class="flex flex-col justify-center border-teally border-2 m-1/12 sm:mt-24 lg:mt-20 md:mx-1/6 lg:mx-1/5 p-1/12"
     >
       <h1 class="text-5xl text-center">Heading 1</h1>
       <h5 class="text-xl text-center">Subheading</h5>
@@ -148,7 +148,7 @@
     <CustomerFavourites
       :orders="favourites"
       :products="products"
-      class="px-1/12"
+      class="px-1/12 sm:px-1/6 md:px-1/12 lg:px-1/6"
     />
   </div>
 </template>

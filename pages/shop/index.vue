@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-10 px-4 md:px-1/12">
+  <div class="pt-10 px-4 sm:px-1/12 md:px-1/6 lg:px-1/4">
     <div class="">
       <p class="text-sm font-bold text-teally uppercase mb-4">Categories</p>
       <div class="grid grid-cols-2 grid-rows-2 gap-4">

@@ -2,7 +2,7 @@
   <div class="group w-full h-full md:w-1/2 rounded-lg">
     <div class="h-half overflow-hidden rounded-tr-lg rounded-tl-lg">
       <img
-        :src="packageImage"
+        :src="'https://mockspa-api.herokuapp.com/' + packageImage"
         alt=""
         class="transform group-hover:scale-150 transition duration-1000 ease-in-out h-full w-full object-fit object-cover"
       />
@@ -26,7 +26,11 @@
         label="MAKE BOOKING"
         variant="teally"
         class="my-2"
-        :to="`/packages/${id}/booking`"
+        :to="
+          packages === true
+            ? `/packages/${id}/booking`
+            : `/treatments/${id}/booking`
+        "
       />
     </div>
   </div>
@@ -60,6 +64,10 @@ export default {
     background: {
       type: String,
       default: 'teally'
+    },
+    package: {
+      type: Boolean,
+      default: true
     }
   }
 }

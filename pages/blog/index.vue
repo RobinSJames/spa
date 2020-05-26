@@ -1,5 +1,5 @@
 <template>
-  <div class="px-1/12 pt-1/12">
+  <div class="px-1/12 md:px-1/6 lg:px-1/4 pt-1/12 md:pt-16">
     <div class="flex flex-col items-center">
       <h3 class="font-serif text-5xl">Blog</h3>
       <div class="w-40 h-tiny bg-teally mb-2"></div>

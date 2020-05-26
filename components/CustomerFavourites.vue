@@ -11,11 +11,16 @@
         class="relative cursor-pointer text-center mb-16 md:mb-0 md:pl-10"
         @click="toRouteId(order._id)"
       >
-        <img
-          :src="'https://mockspa-api.herokuapp.com/' + order.productImage"
-          alt=""
-        />
-        <h4 class="text-3xl font-medium">{{ order.title }}</h4>
+        <div class="w-full">
+          <img
+            :src="'https://mockspa-api.herokuapp.com/' + order.productImage"
+            alt=""
+            class="w-full object-cover object-center"
+          />
+        </div>
+        <h4 class="text-lg sm:text-2xl md:text-xl lg:text-2xl font-medium">
+          {{ order.title }}
+        </h4>
         <h4 v-if="!order.isOnSale" class="text-teally text-xl">
           R{{ order.cost }}
         </h4>
@@ -27,7 +32,7 @@
           class="absolute top-0 right-0 w-full sm:w-1/2 md:w-full xl:w-/12"
         >
           <div
-            style="clip-path: polygon(100% 0, 50% 0, 50% 45%, 100% 70%);"
+            style="clip-path: polygon(100% 0, 40% 0, 40% 45%, 100% 70%);"
             class="w-full h-20 lg:h-24 bg-sale-red z-10"
           >
             <p
