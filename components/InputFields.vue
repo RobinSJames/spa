@@ -28,9 +28,9 @@
         :class="inputClass"
       ></textarea>
     </div>
-    <div class="flex" v-else-if="type === 'date'">
+    <div v-else-if="type === 'date'" class="flex">
       <label v-if="label" class="tracking-widest">{{ label }}</label>
-      <input
+      <!-- <input
         ref="dateField"
         v-model="inputValue"
         type="text"
@@ -38,7 +38,15 @@
         :disabled="disabled"
         class="w-full border p-2"
         :class="rounded ? 'rounded-lg' : ''"
-      />
+      /> -->
+      <flatpickr
+        v-model="inputValue"
+        :config="config"
+        class="border"
+        placeholder="Select date"
+        name="date"
+      >
+      </flatpickr>
     </div>
     <div v-else>
       <label v-if="label !== 'Label'" class="tracking-widest">{{
@@ -59,8 +67,9 @@
 
 <script>
 import 'flatpickr/dist/flatpickr.css'
-import flatpickr from 'flatpickr'
+import flatpickr from 'vue-flatpickr-component'
 export default {
+  components: { flatpickr },
   props: {
     inputClass: {
       type: String,
@@ -133,21 +142,21 @@ export default {
     }
   },
   mounted() {
-    this.init()
+    // this.init()
   },
   methods: {
-    init() {
-      if (this.flatpickr) {
-        this.flatpickr.destroy()
-      } else if (this.type === 'date') {
-        this.flatpickr = flatpickr(this.$refs.dateField, {
-          dateFormat: 'd-m-Y',
-          minDate: Date.now(),
-          onClose: this.onBlur,
-          onChange: (value) => (this.inputValue = value[0])
-        })
-      }
-    }
+    // init() {
+    //   if (this.flatpickr) {
+    //     this.flatpickr.destroy()
+    //   } else if (this.type === 'date') {
+    //     this.flatpickr = flatpickr(this.$refs.dateField, {
+    //       dateFormat: 'd-m-Y',
+    //       minDate: Date.now(),
+    //       onClose: this.onBlur,
+    //       onChange: (value) => (this.inputValue = value[0])
+    //     })
+    //   }
+    // }
   }
 }
 </script>
