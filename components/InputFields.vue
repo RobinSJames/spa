@@ -66,8 +66,9 @@
 </template>
 
 <script>
-import 'flatpickr/dist/flatpickr.css'
+// import 'flatpickr/dist/flatpickr.css'
 import flatpickr from 'vue-flatpickr-component'
+// import 'flatpickr/dist/themes/material_blue.css'
 export default {
   components: { flatpickr },
   props: {
