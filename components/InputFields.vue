@@ -2,7 +2,12 @@
   <div>
     <div v-if="type === 'select'">
       <label class="tracking-widest">{{ label }}</label>
-      <select type="select" class="w-full border p-2" :class="inputClass">
+      <select
+        type="select"
+        class="w-full border p-2"
+        :class="inputClass"
+        :disabled="disabled"
+      >
         <option
           v-for="(option, index) in options"
           :key="index"
@@ -16,6 +21,7 @@
       <textarea
         v-model="inputValue"
         :placeholder="placeholder"
+        :disabled="disabled"
         :cols="cols"
         :rows="rows"
         class="w-full p-2"
@@ -24,8 +30,12 @@
     </div>
     <div v-else-if="type === 'date'">
       <label v-if="label" class="tracking-widest">{{ label }}</label>
-      <FlatPickr
-        :config="config"
+      <input
+        ref="dateField"
+        v-model="inputValue"
+        type="text"
+        :placeholder="placeholder"
+        :disabled="disabled"
         class="w-full border p-2"
         :class="rounded ? 'rounded-lg' : ''"
       />
@@ -48,10 +58,9 @@
 </template>
 
 <script>
-import FlatPickr from 'vue-flatpickr-component'
 import 'flatpickr/dist/flatpickr.css'
+import flatpickr from 'flatpickr'
 export default {
-  components: { FlatPickr },
   props: {
     inputClass: {
       type: String,
@@ -85,6 +94,10 @@ export default {
       type: String,
       default: 'This is a placeholder'
     },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
     cols: {
       type: Number,
       default: 10
@@ -116,6 +129,23 @@ export default {
       },
       set(value) {
         this.$emit('input', value)
+      }
+    }
+  },
+  mounted() {
+    this.init()
+  },
+  methods: {
+    init() {
+      if (this.flatpickr) {
+        this.flatpickr.destroy()
+      } else if (this.type === 'date') {
+        this.flatpickr = flatpickr(this.$refs.dateField, {
+          dateFormat: 'd-m-Y',
+          minDate: Date.now(),
+          onClose: this.onBlur,
+          onChange: (value) => (this.inputValue = value[0])
+        })
       }
     }
   }
