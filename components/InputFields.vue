@@ -28,7 +28,7 @@
         :class="inputClass"
       ></textarea>
     </div>
-    <div v-else-if="type === 'date'">
+    <div class="flex" v-else-if="type === 'date'">
       <label v-if="label" class="tracking-widest">{{ label }}</label>
       <input
         ref="dateField"

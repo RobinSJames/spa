@@ -3,7 +3,7 @@
     ID booking page
     <div class="w-1/2">
       <InputFields v-model="date" type="date" class="" rounded />
-      <AppButton label="ADD TO CART" variant="teally" class="rounded-lg" />
+      <AppButton label="MAKE BOOKING" variant="teally" class="rounded-lg" />
     </div>
   </div>
 </template>

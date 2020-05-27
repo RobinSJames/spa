@@ -65,7 +65,7 @@ export default {
       type: String,
       default: 'teally'
     },
-    package: {
+    packages: {
       type: Boolean,
       default: true
     }

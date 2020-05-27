@@ -15,6 +15,7 @@
         :body="object.excerpt"
         :price="object.cost"
         class="md:pr-4 lg:pr-8 md:mb-8 lg:mb-10"
+        :packages="false"
       />
     </PackageList>
   </div>
