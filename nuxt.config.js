@@ -81,7 +81,10 @@ export default {
         home: '/'
       }
     },
-    plugins: ['plugins/nuxt-auth-redirect.js']
+    plugins: [
+      'plugins/nuxt-auth-redirect.js'
+      // 'plugins/flatpickr.js'
+    ]
   },
   /*
    ** Build configuration
