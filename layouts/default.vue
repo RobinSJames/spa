@@ -40,7 +40,13 @@ export default {
       return this.$store.state.orders.local
     }
   },
+  mounted() {
+    this.fetchLocal()
+  },
   methods: {
+    async fetchLocal() {
+      return await this.$store.dispatch('orders/fetchLocal')
+    },
     toggleNav() {
       this.open = !this.open
       if (this.open === true) this.disableScrolling()
