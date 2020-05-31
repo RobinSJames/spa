@@ -4,15 +4,30 @@ export const state = () => ({
   single: []
 })
 
+export const waitStart = (dispFunc, resource) => {
+  dispFunc('wait/start', resource, { root: true })
+}
+
+export const waitEnd = (dispFunc, resource) => {
+  dispFunc('wait/end', resource, { root: true })
+}
+
 export const actions = {
   fetchItems({ commit }) {
-    this.$axios.$get('/treatments').then((res) => {
-      commit('setItems', res.data)
-    })
+    return this.$axios
+      .$get('/treatments')
+      .then((res) => {
+        commit('setItems', res.data)
+      })
+      .catch((error) => {
+        return Promise.reject(error)
+      })
   },
-  fetchItem({ commit }, { id }) {
+  fetchItem({ commit, dispatch }, { id }) {
+    waitStart(dispatch, 'treatments')
     this.$axios.$get(`/treatments/${id}`).then((res) => {
       commit('setItem', res.data)
+      waitEnd(dispatch, 'treatments')
     })
   }
 }

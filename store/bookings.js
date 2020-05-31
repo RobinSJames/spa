@@ -7,15 +7,25 @@ export const state = () => ({
   }
 })
 
+export const waitStart = (dispFunc, resource) => {
+  dispFunc('wait/start', resource, { root: true })
+}
+
+export const waitEnd = (dispFunc, resource) => {
+  dispFunc('wait/end', resource, { root: true })
+}
+
 export const actions = {
   // fetchItems({ commit }) {
   //   this.$axios.$get('/bookings').then((res) => {
   //     commit('SET_ITEMS', res.data)
   //   })
   // },
-  createAvailability({ commit }, obj) {
+  createAvailability({ commit, dispatch }, obj) {
+    waitStart(dispatch, 'create.availability')
     this.$axios.$post('/bookings/available', obj).then((res) => {
       commit('SET_AVAILABILITY', res.data)
+      waitEnd(dispatch, 'create.availability')
     })
   }
 }

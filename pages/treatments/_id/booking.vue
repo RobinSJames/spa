@@ -21,8 +21,11 @@
           <div class="w-20 h-tiny bg-teally mb-2"></div>
         </div>
         <!-- {{ availability }} -->
+        <div v-if="$wait.waiting('create.availability')">
+          Loading...
+        </div>
         <div
-          v-if="availability.count > 0"
+          v-if="availability.count > 0 && !$wait.waiting('create.availability')"
           class="flex flex-wrap justify-between pt-4"
         >
           <AppButton
@@ -35,7 +38,9 @@
           </AppButton>
         </div>
         <div
-          v-if="availability.count === 0"
+          v-if="
+            availability.count === 0 && !$wait.waiting('create.availability')
+          "
           class="flex flex-wrap justify-between pt-4"
         >
           <AppButton
