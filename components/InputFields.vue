@@ -42,7 +42,8 @@
       <flatpickr
         v-model="inputValue"
         :config="config"
-        class="border"
+        class="w-full border p-2"
+        :class="rounded ? 'rounded-lg' : ''"
         placeholder="Select date"
         name="date"
       >
